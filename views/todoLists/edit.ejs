@@ -1,11 +1,8 @@
 <% include ../shared/header %>
 
-<div class="todoLists-header">
-  <h1>Rapido</h1>
-</div>
+<% include ../shared/headerBar %>
 
-<div class="container">
-  <div class="todoLists-container">
+
     <form method="post" action="/todoLists/<%= id %>?_method=PUT">
       <p>title:</p>
       <input type="text" name="todo" value="<%= todoE.todo %>">
@@ -13,7 +10,6 @@
       <textarea name="description" rows="1" cols="20"><%= todoE.description %></textarea></br>
       <input type="submit" value="保存"><input type="reset" value="リセット">
     </form>
-  </div>
-</div>
+
 
 <%include ../shared/footer %>

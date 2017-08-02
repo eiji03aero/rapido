@@ -15,8 +15,8 @@ exports.new = function(req, res) {
 exports.create = function(req, res) {
   console.log(req);
   let todo = {
-    todo: req.body.title,
-    body: req.body.body
+    todo: req.body.todo,
+    description: req.body.description
   };
   todoLists.push(todo);
   res.redirect('/');

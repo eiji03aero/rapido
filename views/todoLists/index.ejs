@@ -1,26 +1,68 @@
 <% include ../shared/header %>
-<div class="todoLists-header">
-  <h1>Rapido</h1>
-</div>
 
-<div class="container">
-  <div class="todoLists-container">
-    <% for (var i=0; i<todoLists.length; i++) {%>
-      <div class="todoLists-content">
-        <h3>
-          <%= todoLists[i].todo %>
-          <a href="/todoLists/<%= i %>/edit">
-            <button>edit</button>
-          </a>
-        </h3>
-        <p><%= todoLists[i].description %></p>
+<% include ../shared/headerBar %>
+
+<div class="service-body">
+  <div class="todoLists-headliner">
+    <div class="headliner-title">
+      <p>todoLists</p>
+    </div>
+    <input type="button" value="Create new" onClick="location.href='/todoLists/new'" class="create-btn">
+  </div>
+  <div class="container">
+    <div class="todoLists-sidebar">
+      <p>Concierge U</p>
+      <p>Home chores</p>
+      <p>etc</p>
+    </div>
+    <div class="todoLists-container">
+      <div class="todoLists-optionals">
+        <a href="#">osakabe</a>
+        <a href="#">taguchi</a>
+        <a href="#">fkoji</a>
       </div>
-    <% } %>
-    <a href="/todoLists/new" method="post">create new</a>
-    <button id="open-delete-modal">delete</button>
+      <div class="todoLists-field">
+        <div class="todoLists-categories">
+          <div class="categories-header">
+            <p>due today</p>
+          </div>
+          <% for (var i=0; i<todoLists.length; i++) {%>
+            <div class="todoLists-content">
+              <h3>
+                <%= todoLists[i].todo %>
+                <a href="/todoLists/<%= i %>/edit">
+                  <button>edit</button>
+                </a>
+              </h3>
+              <p><%= todoLists[i].description %></p>
+            </div>
+          <% } %>
+        </div>
+        <div class="todoLists-categories">
+          <div class="categories-header">
+            <p>have bullet</p>
+          </div>
+        </div>
+        <div class="todoLists-categories">
+          <div class="categories-header">
+            <p>waited bullet</p>
+          </div>
+        </div>
+        <div class="todoLists-categories">
+          <div class="categories-header">
+            <p>other bullet</p>
+          </div>
+        </div>
+        <div class="todoLists-categories">
+          <div class="categories-header">
+            <p>done soldier</p>
+          </div>
+        </div>
+      </div>
+      <%# <button id="open-delete-modal">delete</button>%>
+    </div>
   </div>
 </div>
-
 
 
 <div id="modal-bg">
@@ -37,3 +79,6 @@
 <script type="text/javascript" src="/js/index.js"></script>
 
 <%include ../shared/footer %>
+
+
+<%# TODO 編集のモーダルは右から出てくる感じに。参考：salesforce%>

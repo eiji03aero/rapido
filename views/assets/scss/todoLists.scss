@@ -1,37 +1,124 @@
+@import "variables";
+@import "reset";
+
+
 body {
-  background: #eeeeee;
-  font-family: avenir-light;
-  margin: 0px;
-  padding: 0px;
-  h1 {
-    margin: 0px;
-    color: #eee;
-    font-size: 24px;
+  background: $bgColor;
+  font-family: "avenir-light", sans-serif;
+  color: $fcBlack;
+  h1, h3 {
+    font-weight: 200;
+  }
+  a {
+    color: $fcAnchor;
   }
 }
 
-.container {
-  text-align: center;
-  background: #ffffff;
-  box-shadow: 1px 1px 1px rgba(0,0,0, 0.5);
-  margin: 50px;
+// TODO todoLists-fieldの高さ自動調節をそのうちやる。今は70%で適当にやってる
+
+
+.service-header {
+  padding: 7px 20px 5px;
+  background: $bgSHeader;
+  color: $fcWhite;
+  h1 {
+    font-size: 1.5rem;
+  }
 }
 
-.todoLists-header {
-  padding: 10px;
-  background: #004080;
-  color: #eeeeee;
+.service-body {
+  padding: 0 50px;
+  height: 90%;
+  box-sizing: border-box;
+  .todoLists-headliner {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2.5rem 0 1.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid $bdrColor;
+    .headliner-title {
+      margin-right: auto;
+      p {
+        font-size: 1.6rem;
+        color: $fcBlack;
+      }
+    }
+    .create-btn {
+      background-color: $btnMain;
+      color: #ffffff;
+      font-size: 1rem;
+      border-radius: 3px;
+      padding: 0.7rem 1.5rem;
+      border: none;
+    }
+  }
+  .container {
+    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    height: 75%;
+    .todoLists-sidebar {
+      flex-grow: 1;
+      text-align: left;
+      p {
+        padding: 0.5rem 0;
+      }
+    }
+    .todoLists-container {
+      flex: 9;
+      .todoLists-optionals {
+        height: 40px;
+        text-align: left;
+        :not(:first-child) {
+          margin-left: 10px;
+        }
+      }
+    }
+    .todoLists-field {
+      background: $bgTDField;
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      div.todoLists-categories:not(:first-child) {
+        border-left: 2px solid rgba(50,50,60,0.1);
+      }
+      .todoLists-categories {
+        flex: 1;
+        padding: 0 20px;
+        overflow-y: auto;
+        .categories-header {
+          margin: 10px 0;
+          p {
+            font-size: 1.2rem;
+          }
+        }
+        .todoLists-content {
+          width: 100%;
+          min-height: 100px;
+          text-align: left;
+          padding-left: 5px;
+          background-color: $bgColor;
+          border-radius: 3px;
+          box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+          margin-bottom: 20px;
+          p {
+            margin-top: 5px;
+            color: $fcGray;
+          }
+        }
+      }
+    }
+  }
 }
 
-.todoLists-container {
-  padding: 10px;
-  margin-top: 20px;
-}
 
-.todoLists-content {
-  border: 1px solid #777777;
-  margin: 5px;
-}
+
+
+
 #modal-bg {
   z-index: 1;
   display: none;

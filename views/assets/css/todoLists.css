@@ -1,31 +1,109 @@
+html {
+  height: 100%;
+  margin: 0; }
+
 body {
-  background: #eeeeee;
-  font-family: avenir-light;
-  margin: 0px;
-  padding: 0px; }
-  body h1 {
-    margin: 0px;
-    color: #eee;
-    font-size: 24px; }
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+  body p, body h1, body h3 {
+    margin: 0;
+    padding: 0; }
+  body button {
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none; }
+  body input {
+    cursor: pointer; }
 
-.container {
-  text-align: center;
+body {
   background: #ffffff;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-  margin: 50px; }
+  font-family: "avenir-light", sans-serif;
+  color: #33457b; }
+  body h1, body h3 {
+    font-weight: 200; }
+  body a {
+    color: #0091AE; }
 
-.todoLists-header {
-  padding: 10px;
-  background: #004080;
+.service-header {
+  padding: 7px 20px 5px;
+  background: #2e2e2e;
   color: #eeeeee; }
+  .service-header h1 {
+    font-size: 1.5rem; }
 
-.todoLists-container {
-  padding: 10px;
-  margin-top: 20px; }
-
-.todoLists-content {
-  border: 1px solid #777777;
-  margin: 5px; }
+.service-body {
+  padding: 0 50px;
+  height: 90%;
+  box-sizing: border-box; }
+  .service-body .todoLists-headliner {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2.5rem 0 1.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid #cbd6e2; }
+    .service-body .todoLists-headliner .headliner-title {
+      margin-right: auto; }
+      .service-body .todoLists-headliner .headliner-title p {
+        font-size: 1.6rem;
+        color: #33457b; }
+    .service-body .todoLists-headliner .create-btn {
+      background-color: #ff7a59;
+      color: #ffffff;
+      font-size: 1rem;
+      border-radius: 3px;
+      padding: 0.7rem 1.5rem;
+      border: none; }
+  .service-body .container {
+    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    height: 75%; }
+    .service-body .container .todoLists-sidebar {
+      flex-grow: 1;
+      text-align: left; }
+      .service-body .container .todoLists-sidebar p {
+        padding: 0.5rem 0; }
+    .service-body .container .todoLists-container {
+      flex: 9; }
+      .service-body .container .todoLists-container .todoLists-optionals {
+        height: 40px;
+        text-align: left; }
+        .service-body .container .todoLists-container .todoLists-optionals :not(:first-child) {
+          margin-left: 10px; }
+    .service-body .container .todoLists-field {
+      background: #f5f8fa;
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%; }
+      .service-body .container .todoLists-field div.todoLists-categories:not(:first-child) {
+        border-left: 2px solid rgba(50, 50, 60, 0.1); }
+      .service-body .container .todoLists-field .todoLists-categories {
+        flex: 1;
+        padding: 0 20px;
+        overflow-y: auto; }
+        .service-body .container .todoLists-field .todoLists-categories .categories-header {
+          margin: 10px 0; }
+          .service-body .container .todoLists-field .todoLists-categories .categories-header p {
+            font-size: 1.2rem; }
+        .service-body .container .todoLists-field .todoLists-categories .todoLists-content {
+          width: 100%;
+          min-height: 100px;
+          text-align: left;
+          padding-left: 5px;
+          background-color: #ffffff;
+          border-radius: 3px;
+          box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+          margin-bottom: 20px; }
+          .service-body .container .todoLists-field .todoLists-categories .todoLists-content p {
+            margin-top: 5px;
+            color: #555555; }
 
 #modal-bg {
   z-index: 1;
