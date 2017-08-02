@@ -1,0 +1,62 @@
+body {
+  background: #eeeeee;
+  font-family: avenir-light;
+  margin: 0px;
+  padding: 0px;
+  h1 {
+    margin: 0px;
+    color: #eee;
+    font-size: 24px;
+  }
+}
+
+.container {
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 1px 1px 1px rgba(0,0,0, 0.5);
+  margin: 50px;
+}
+
+.todoLists-header {
+  padding: 10px;
+  background: #004080;
+  color: #eeeeee;
+}
+
+.todoLists-container {
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.todoLists-content {
+  border: 1px solid #777777;
+  margin: 5px;
+}
+#modal-bg {
+  z-index: 1;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.40);
+}
+
+#edit-modal {
+  z-index: 5;
+  display: none;
+  position: fixed;
+  height: 500px;
+  width: 500px;
+  background-color: #ffffff;
+}
+
+#delete-modal {
+  z-index: 5;
+  display: none;
+  position: fixed;
+  height: 200px;
+  width: 500px;
+  background-color: #f0f0f0;
+}

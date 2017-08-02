@@ -1,0 +1,39 @@
+<% include ../shared/header %>
+<div class="todoLists-header">
+  <h1>Rapido</h1>
+</div>
+
+<div class="container">
+  <div class="todoLists-container">
+    <% for (var i=0; i<todoLists.length; i++) {%>
+      <div class="todoLists-content">
+        <h3>
+          <%= todoLists[i].todo %>
+          <a href="/todoLists/<%= i %>/edit">
+            <button>edit</button>
+          </a>
+        </h3>
+        <p><%= todoLists[i].description %></p>
+      </div>
+    <% } %>
+    <a href="/todoLists/new" method="post">create new</a>
+    <button id="open-delete-modal">delete</button>
+  </div>
+</div>
+
+
+
+<div id="modal-bg">
+</div>
+<div id="edit-modal">
+  <input type="text" placeholder="put something here!">
+</div>
+<div id="delete-modal">
+  <p>Are you sure?</p>
+  <button>sure!</button>
+  <button>nah hold on a sec</button>
+</div>
+
+<script type="text/javascript" src="/js/index.js"></script>
+
+<%include ../shared/footer %>
