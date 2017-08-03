@@ -1,35 +1,26 @@
 const modalTime = 200;
+
 $(".open-edit-modal").click(function() {
-  editModalResize();
+  modalResize();
   $("#modal-bg, #edit-modal").fadeIn(modalTime);
 });
+
+$("#open-create-modal").click(function() {
+  modalResize();
+  $("#modal-bg, #modal-field, #create-todo").fadeIn(modalTime);
+});
+
 $("#modal-bg").click(function() {
-  $("#modal-bg, #edit-modal, #delete-modal").fadeOut(modalTime);
+  $(".modals").fadeOut(modalTime);
 });
 
-$("#open-delete-modal").click(function() {
-  deleteModalResize();
-  $("#modal-bg, #delete-modal").fadeIn(modalTime);
-});
-
-function editModalResize() {
+function modalResize() {
   let h = $(window).height(),
       w = $(window).width(),
-      mh = $("#edit-modal").outerHeight(),
-      mw = $("#edit-modal").outerWidth();
-  $("#edit-modal").css({
+      mh = $("#modal-field").outerHeight(),
+      mw = $("#modal-field").outerWidth();
+  $("#modal-field").css({
     "top": ((h-mh)/2) + "px",
     "left": ((w-mw)/2) + "px",
   });
 };
-
-function deleteModalResize() {
-  let h = $(window).height(),
-      w = $(window).width(),
-      mh = $("#delete-modal").outerHeight(),
-      mw = $("#delete-modal").outerWidth();
-  $("#delete-modal").css({
-    "top": ((h-mh)/2) + "px",
-    "left": ((w-mw)/2) + "px",
-  });
-}

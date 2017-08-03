@@ -27,6 +27,7 @@ app.get('/todoLists/new', todoLists.new);
 app.post('/todoLists/create', todoLists.create);
 app.get('/todoLists/:id/edit', todoLists.edit);
 app.put('/todoLists/:id', todoLists.update);
+app.delete('/todoLists/:id', todoLists.destroy);
 
 
 //server
