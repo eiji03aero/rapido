@@ -60,7 +60,7 @@ body {
     text-align: center;
     display: -webkit-flex;
     display: flex;
-    height: 75%; }
+    height: 78%; }
     .service-body .container .todoLists-sidebar {
       flex-grow: 1;
       text-align: left; }
@@ -73,37 +73,49 @@ body {
         text-align: left; }
         .service-body .container .todoLists-container .todoLists-optionals :not(:first-child) {
           margin-left: 10px; }
-    .service-body .container .todoLists-field {
-      background: #f5f8fa;
-      position: relative;
-      display: flex;
-      justify-content: space-around;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%; }
-      .service-body .container .todoLists-field div.todoLists-categories:not(:first-child) {
-        border-left: 2px solid rgba(50, 50, 60, 0.1); }
-      .service-body .container .todoLists-field .todoLists-categories {
-        flex: 1;
-        padding: 0 20px;
-        overflow-y: auto; }
-        .service-body .container .todoLists-field .todoLists-categories .categories-header {
-          margin: 10px 0; }
-          .service-body .container .todoLists-field .todoLists-categories .categories-header p {
-            font-size: 1.2rem; }
-        .service-body .container .todoLists-field .todoLists-categories .todoLists-content {
-          width: 100%;
-          min-height: 100px;
-          text-align: left;
-          padding-left: 5px;
-          background-color: #ffffff;
-          border-radius: 3px;
-          box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-          margin-bottom: 20px; }
-          .service-body .container .todoLists-field .todoLists-categories .todoLists-content p {
-            margin-top: 5px;
-            color: #555555; }
+      .service-body .container .todoLists-container .todoLists-field {
+        background: #f5f8fa;
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border: 1px solid rgba(50, 50, 60, 0.1); }
+        .service-body .container .todoLists-container .todoLists-field div.todoLists-categories:not(:first-child) {
+          border-left: 1px solid rgba(50, 50, 60, 0.1); }
+        .service-body .container .todoLists-container .todoLists-field .todoLists-categories {
+          flex: 1; }
+          .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-header {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(50, 50, 60, 0.1); }
+            .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-header p {
+              margin-left: 7px;
+              text-align: left;
+              font-size: 1rem; }
+          .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body {
+            padding: 0 10px;
+            overflow-y: auto;
+            text-align: center; }
+            .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content {
+              width: auto;
+              min-height: 80px;
+              max-height: 120px;
+              text-align: left;
+              padding: 5px 10px;
+              background-color: #fefefe;
+              border-radius: 3px;
+              box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+              margin: 20px 0; }
+              .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content p {
+                margin-top: 5px;
+                color: #555555;
+                font-size: 0.9rem; }
+              .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content a {
+                float: left; }
+              .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content button {
+                float: right; }
 
 #modal-bg {
   z-index: 1;
@@ -115,18 +127,20 @@ body {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.4); }
 
-#edit-modal {
+#modal-field {
   z-index: 5;
   display: none;
   position: fixed;
   height: 500px;
-  width: 500px;
+  width: 700px;
+  padding: 20px;
   background-color: #ffffff; }
-
-#delete-modal {
-  z-index: 5;
-  display: none;
-  position: fixed;
-  height: 200px;
-  width: 500px;
-  background-color: #f0f0f0; }
+  #modal-field #create-todo {
+    z-index: 10;
+    display: none; }
+    #modal-field #create-todo h1 {
+      border-bottom: 1px solid #cbd6e2; }
+    #modal-field #create-todo .create-todo-body {
+      margin-top: 30px; }
+      #modal-field #create-todo .create-todo-body input {
+        margin-bottom: 20px; }

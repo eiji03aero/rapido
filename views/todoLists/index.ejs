@@ -7,7 +7,8 @@
     <div class="headliner-title">
       <p>todoLists</p>
     </div>
-    <input type="button" value="Create new" onClick="location.href='/todoLists/new'" class="create-btn">
+    <%# <input type="button" value="Create new" onClick="location.href='/todoLists/new'" class="create-btn">%>
+    <button id="open-create-modal" class="create-btn">Create new</button>
   </div>
   <div class="container">
     <div class="todoLists-sidebar">
@@ -26,17 +27,21 @@
           <div class="categories-header">
             <p>due today</p>
           </div>
-          <% for (var i=0; i<todoLists.length; i++) {%>
-            <div class="todoLists-content">
-              <h3>
-                <%= todoLists[i].todo %>
-                <a href="/todoLists/<%= i %>/edit">
-                  <button>edit</button>
-                </a>
-              </h3>
-              <p><%= todoLists[i].description %></p>
-            </div>
-          <% } %>
+          <div class="categories-body">
+            <% for (var i=0; i<todoLists.length; i++) {%>
+              <div class="todoLists-content">
+                <h3>
+                  <%= todoLists[i].todo %>
+                </h3>
+                <p><%= todoLists[i].description %></p>
+                <a href="/todoLists/<%= i %>/edit">edit</a>
+                <form method="post" action="/todoLists/<%= i %>?_method=DELETE">
+                  <input type="hidden" name="id" value="<%= i %>">
+                  <input type="submit" value="del">
+                </form>
+              </div>
+            <% } %>
+          </div>
         </div>
         <div class="todoLists-categories">
           <div class="categories-header">
@@ -59,21 +64,25 @@
           </div>
         </div>
       </div>
-      <%# <button id="open-delete-modal">delete</button>%>
     </div>
   </div>
 </div>
 
 
-<div id="modal-bg">
-</div>
-<div id="edit-modal">
-  <input type="text" placeholder="put something here!">
-</div>
-<div id="delete-modal">
-  <p>Are you sure?</p>
-  <button>sure!</button>
-  <button>nah hold on a sec</button>
+<div id="modal-bg" class="modals"></div>
+<div id="modal-field" class="modals">
+  <div id="create-todo" class="modals">
+    <h1>Create new todo</h1>
+    <div class="create-todo-body">
+      <form method="post" action="/todoLists/create">
+      <p>title:</p>
+      <input type="text" name="todo" placeholder="put title here">
+      <p>body:</p>
+      <textarea name="description" rows="4" cols="80" placeholder="todoの内容を記入"></textarea></br>
+      <input type="submit" value="保存"><input type="reset" value="リセット">
+      </form>
+    </div>
+  </div>
 </div>
 
 <script type="text/javascript" src="/js/index.js"></script>

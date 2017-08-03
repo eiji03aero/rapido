@@ -33,3 +33,8 @@ exports.update = function(req, res) {
   };
   res.redirect('/');
 }
+
+exports.destroy = function(req, res) {
+  todoLists.splice(req.body.id, 1);
+  res.redirect('/');
+}
