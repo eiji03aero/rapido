@@ -9,7 +9,8 @@ var express = require('express'),
     assert = require('assert'),
 
     //controller
-    todoLists = require('./routes/todoLists');
+    todoLists = require('./routes/todoLists'),
+    mongodbTest  = require('./routes/mongodbTest');
 
 
 //settings

@@ -1,9 +1,6 @@
-var collection = require('../mongo');
+var users = require('../mongo');
 
 exports.index = function(req, res) {
-  if (!collection('users')) {
-    
-  }
-  res.send()
+  console.log(users.db);
+  res.render('mongodbTest/index', {users: users});
 }
-sl
