@@ -15,6 +15,7 @@
     "express-jquery": "^1.8.3",
     "jquery": "^3.2.1",
     "method-override": "^2.3.9",
+    "mongodb": "^2.2.30",
     "morgan": "^1.8.2",
     "node-sass": "^4.5.3"
   }

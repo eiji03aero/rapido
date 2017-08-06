@@ -4,9 +4,13 @@ var express = require('express'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
+    MongoClient = require('mongodb').MongoClient,
+    url = 'mongodb://localhost:27017/rapido',
+    assert = require('assert'),
 
     //controller
     todoLists = require('./routes/todoLists');
+
 
 //settings
 app.set('views', __dirname + '/views');
@@ -28,6 +32,8 @@ app.post('/todoLists/create', todoLists.create);
 app.get('/todoLists/:id/edit', todoLists.edit);
 app.put('/todoLists/:id', todoLists.update);
 app.delete('/todoLists/:id', todoLists.destroy);
+
+app.get('/mongodbTest', mongodbTest.index);
 
 
 //server
