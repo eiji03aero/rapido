@@ -1,6 +1,5 @@
 //variables
 var express = require('express'),
-    app = express(),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
@@ -9,7 +8,10 @@ var express = require('express'),
     assert = require('assert'),
 
     //controller
-    todoLists = require('./routes/todoLists');
+    todoLists = require('./routes/todoLists'),
+    mongodbTest = require('./routes/mongodbTest'),
+
+    app = express();
 
 
 //settings
@@ -38,3 +40,6 @@ app.get('/mongodbTest', mongodbTest.index);
 
 //server
 app.listen(3000);
+
+
+// TODO data以下の部分をgit.ignoreに入れる
