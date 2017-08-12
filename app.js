@@ -9,7 +9,6 @@ var express = require('express'),
 
     //controller
     todoLists = require('./routes/todoLists'),
-    mongodbTest = require('./routes/mongodbTest'),
 
     app = express();
 
@@ -35,11 +34,9 @@ app.get('/todoLists/:id/edit', todoLists.edit);
 app.put('/todoLists/:id', todoLists.update);
 app.delete('/todoLists/:id', todoLists.destroy);
 
-app.get('/mongodbTest', mongodbTest.index);
-
 
 //server
 app.listen(3000);
 
-
-// TODO data以下の部分をgit.ignoreに入れる
+// TODO routerを書き直す。generator仕様
+// TODO jadeの導入。とりあえずどっかで練習してから
