@@ -3,9 +3,13 @@ var todoLists = [
   {todo: 'todo2', description: 'いい感じかな？'},
   {todo: 'todo3', description: 'これは最後'},
 ];
+var collection = require('../mongo'),
+    COL = 'users';
 
 exports.index = function(req, res) {
-  res.render('todoLists/index', {todoLists: todoLists});
+  collection(COL).find().toArray(function(err, items) {
+    res.render('todoLists/index', {todoLists: items});
+  });
 };
 
 exports.new = function(req, res) {
