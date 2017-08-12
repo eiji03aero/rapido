@@ -4,7 +4,6 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     MongoClient = require('mongodb').MongoClient,
-    url = 'mongodb://localhost:27017/rapido',
     assert = require('assert'),
 
     //controller
@@ -13,7 +12,7 @@ var express = require('express'),
     app = express();
 
 
-//settings
+//view settings
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
@@ -22,7 +21,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/views/assets'));
 app.use(morgan('combined'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
 
 
@@ -33,6 +32,13 @@ app.post('/todoLists/create', todoLists.create);
 app.get('/todoLists/:id/edit', todoLists.edit);
 app.put('/todoLists/:id', todoLists.update);
 app.delete('/todoLists/:id', todoLists.destroy);
+
+
+//error handling
+app.use(function(err, req, res, next) {
+  console.log(err.stack);
+  res.status(500).send('something went wrong...');
+})
 
 
 //server

@@ -36,8 +36,10 @@
                 <p><%= todoLists[i].description %></p>
                 <a href="/todoLists/<%= i %>/edit">edit</a>
                 <form method="post" action="/todoLists/<%= i %>?_method=DELETE">
+                <div class="save-button">
                   <input type="hidden" name="id" value="<%= i %>">
                   <input type="submit" value="del">
+                </div>
                 </form>
               </div>
             <% } %>
@@ -78,8 +80,10 @@
       <p>title:</p>
       <input type="text" name="todo" placeholder="put title here">
       <p>body:</p>
-      <textarea name="description" rows="4" cols="80" placeholder="todoの内容を記入"></textarea></br>
-      <input type="submit" value="保存"><input type="reset" value="リセット">
+      <textarea name="description" rows="4" cols="80" placeholder="what are you supposed to do?"></textarea></br>
+      <div class="save-button">
+        <input type="submit" value="保存"><input type="reset" value="リセット">
+      </div>
       </form>
     </div>
   </div>
