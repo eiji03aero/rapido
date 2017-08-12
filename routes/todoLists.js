@@ -4,10 +4,11 @@ var todoLists = [
   {todo: 'todo3', description: 'これは最後'},
 ];
 var collection = require('../mongo'),
-    COL = 'users';
+    COL = 'users',
+    assert = require('assert');
 
 exports.index = function(req, res) {
-  collection(COL).find().toArray(function(err, items) {
+  collection(COL).find({}).toArray(function(err, items) {
     res.render('todoLists/index', {todoLists: items});
   });
 };
@@ -17,13 +18,15 @@ exports.new = function(req, res) {
 };
 
 exports.create = function(req, res) {
-  console.log(req);
   let todo = {
     todo: req.body.todo,
     description: req.body.description
   };
-  todoLists.push(todo);
-  res.redirect('/');
+  collection(COL).insertOne(todo, function(err, result) {
+    assert.equal(err, null);
+    console.log('inserted a document properly');
+    res.redirect('/');
+  });
 };
 
 exports.edit = function(req, res) {
