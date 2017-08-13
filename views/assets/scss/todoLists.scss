@@ -6,7 +6,7 @@ body {
   background: $bgColor;
   font-family: "avenir-light", sans-serif;
   color: $fcBlack;
-  h1, h3 {
+  h1, h3, input, textarea {
     font-weight: 200;
   }
   a {
@@ -129,7 +129,7 @@ body {
                 -webkit-line-clamp: 2;
                 overflow: hidden;
               }
-              a,input {
+              button,input {
                 float: right;
               }
             }
@@ -161,16 +161,17 @@ body {
   padding: 20px;
   background-color: #ffffff;
   border-radius: 0.2rem;
-  #create-todo {
+  #create-todo, #edit-todo {
     z-index: 10;
     display: none;
     h1 {
       border-bottom: 1px solid $bdrColor;
     }
-    .create-todo-body {
+    .modal-todo-body {
       margin-top: 30px;
-      input {
-        margin-bottom: 2rem;
+      input, textarea {
+        margin-bottom: 1rem;
+        font-size: 1rem;
       }
     }
   }
@@ -182,7 +183,7 @@ body {
     background-color: $bgColor;
     padding: 0.2rem 0.5rem;
     border-radius: 0.2rem;
-    transition: all 0.3s 0s ease;
+    // transition: all 0.3s 0s ease;
     cursor: pointer;
     &:hover {
       background-color: $bgHL;

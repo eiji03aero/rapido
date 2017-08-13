@@ -1,0 +1,60 @@
+include ../shared/header.pug
+include ../shared/headerBar.pug
+
+.service-body
+  .todoLists-headliner
+    .headliner-title
+      p todoLists
+    button(id="open-create-modal", class="create-btn") Create new
+    
+  .container
+    .todoLists-sidebar
+      p Concierge U
+      p Home chores
+      p etc
+      
+    .todoLists-container
+      .todoLists-optionals
+        a(href="#") osakabe
+        a(href="#") taguchi
+        a(href="#") fkoji
+        
+      .todoLists-field
+        .todoLists-categories
+          .categories-header
+            p due today
+          .categories-body
+            - for (var i=0; i<todoLists.length; i++) {
+              .todoLists-content
+                h3 #{todoLists[i].todo}
+                p #{todoLists[i].description}
+                button(class='open-edit-modal' data-todo=todoLists[i]) Edit
+                form(method="post", action="/todoLists/"+todoLists[i]._id+"?_method=DELETE")
+                  .save-button
+                    input(type="hidden" name="id" value=todoLists[i]._id)
+                    input(type="submit" value="del")
+            - }
+            
+        .todoLists-categories
+          .categories-header
+            p have bullet
+            
+        .todoLists-categories
+          .categories-header
+            p waited bullet
+
+        .todoLists-categories
+          .categories-header
+            p other bullet
+            
+        .todoLists-categories
+          .categories-header
+            p done soldier
+            
+script(type="text/javascript" src="js/index.js")
+
+include ./modals.pug
+include ../shared/footer.pug
+
+//- TODO 編集のモーダルは右から出てくる感じに。参考：salesforce
+//- TODO テストの実装

@@ -14,7 +14,7 @@ var express = require('express'),
 
 //view settings
 app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
+app.set('view engine', 'pug');
 
 
 //middlewares
@@ -29,7 +29,7 @@ app.use(methodOverride('_method'));
 app.get('/', todoLists.index);
 // app.get('/todoLists/new', todoLists.new);
 app.post('/todoLists/create', todoLists.create);
-app.get('/todoLists/:id/edit', todoLists.edit);
+// app.get('/todoLists/:id/edit', todoLists.edit);
 app.put('/todoLists/:id', todoLists.update);
 app.delete('/todoLists/:id', todoLists.destroy);
 
