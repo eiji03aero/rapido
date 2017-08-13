@@ -27,7 +27,7 @@ app.use(methodOverride('_method'));
 
 //routings
 app.get('/', todoLists.index);
-app.get('/todoLists/new', todoLists.new);
+// app.get('/todoLists/new', todoLists.new);
 app.post('/todoLists/create', todoLists.create);
 app.get('/todoLists/:id/edit', todoLists.edit);
 app.put('/todoLists/:id', todoLists.update);
@@ -46,3 +46,4 @@ app.listen(3000);
 
 // TODO routerを書き直す。generator仕様
 // TODO jadeの導入。とりあえずどっかで練習してから
+// TODO ローディングのアニメーションをcssで作る

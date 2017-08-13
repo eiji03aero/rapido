@@ -4,7 +4,10 @@
   "description": "try to make the best app ever",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "npm run nodemon & npm run node-sass-watch",
+    "nodemon": "nodemon app",
+    "node-sass-watch": "node-sass -w views/assets/scss/ -o views/assets/css"
   },
   "author": "",
   "license": "ISC",

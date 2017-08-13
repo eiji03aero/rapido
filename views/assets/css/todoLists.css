@@ -111,14 +111,20 @@ body {
               background-color: #fefefe;
               border-radius: 3px;
               box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-              margin: 20px 0; }
+              margin: 20px 0;
+              overflow: hidden; }
+              .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content h3 {
+                font-size: 1rem; }
               .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content p {
                 margin-top: 5px;
+                width: 100%;
                 color: #555555;
-                font-size: 0.9rem; }
-              .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content a {
-                float: left; }
-              .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content button {
+                font-size: 0.8rem;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden; }
+              .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content a, .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content input {
                 float: right; }
 
 #modal-bg {
