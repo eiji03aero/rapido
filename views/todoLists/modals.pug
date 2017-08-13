@@ -1,0 +1,28 @@
+#modal-bg.modals
+#modal-field.modals
+  #create-todo.modals
+    h1 Create new todo
+    .modal-todo-body
+      form(method='post', action='/todoLists/create')
+        p title:
+        input(type='text', name='todo', placeholder='put title here')
+        p description:
+        textarea(name='description', rows='4', cols='80', placeholder='what are you supposed to do?')
+        br
+        .save-button
+          input(type='submit', value='保存')
+          input(type='reset', value='リセット')
+
+  
+  #edit-todo.modals
+    h1 Edit todo
+    .modal-todo-body
+      form(id='editForm', method='post', action='/todoLists/')
+        p title:
+        input(id='editTitle', type='text', name='todo')
+        p description:
+        textarea(id='editBody', name='description', rows='4', cols='80')
+        br
+        .save-button
+          input(type='submit', value='更新')
+          input(type='reset', value='リセット')

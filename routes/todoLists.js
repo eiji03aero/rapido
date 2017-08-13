@@ -1,25 +1,17 @@
-var todoLists = [
-  {todo: 'todo1', description: 'こんな感じ〜'},
-  {todo: 'todo2', description: 'いい感じかな？'},
-  {todo: 'todo3', description: 'これは最後'},
-];
 var collection = require('../mongo'),
     ObjectID = require('mongodb').ObjectID,
     COL = 'todoLists',
+    todo,
     assert = require('assert');
 
 exports.index = function(req, res) {
-  collection(COL).find({}).toArray(function(err, items) {
-    res.render('todoLists/index', {todoLists: items});
+  collection(COL).find({}).toArray(function(err, result) {
+    res.render('todoLists/index', {todoLists: result});
   });
 };
 
-// exports.new = function(req, res) {
-//   res.render('todoLists/new')
-// };
-
 exports.create = function(req, res) {
-  let todo = {
+  todo = {
     todo: req.body.todo,
     description: req.body.description
   };
@@ -30,16 +22,18 @@ exports.create = function(req, res) {
   });
 };
 
-exports.edit = function(req, res) {
-  res.render('todoLists/edit', {todoE: todoLists[req.params.id], id: req.params.id});
-};
-
 exports.update = function(req, res) {
-  todoLists[req.params.id] = {
-    todo: req.body.todo,
-    description: req.body.description
-  };
-  res.redirect('/');
+  collection(COL).updateOne(
+    {_id: new ObjectID(req.body.id)},
+    {
+      todo: req.body.todo,
+      description: req.body.description
+    },
+    {upsert: true},
+    function(err, result) {
+      res.redirect('/');
+    }
+  )
 }
 
 exports.destroy = function(req, res) {
@@ -49,6 +43,4 @@ exports.destroy = function(req, res) {
       res.redirect('/');
     }
   )
-  // todoLists.splice(req.body.id, 1);
-  // res.redirect('/');
 }

@@ -25,7 +25,7 @@ body {
   background: #ffffff;
   font-family: "avenir-light", sans-serif;
   color: #33457b; }
-  body h1, body h3 {
+  body h1, body h3, body input, body textarea {
     font-weight: 200; }
   body a {
     color: #0091AE; }
@@ -124,7 +124,7 @@ body {
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 2;
                 overflow: hidden; }
-              .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content a, .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content input {
+              .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content button, .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content input {
                 float: right; }
 
 #modal-bg {
@@ -146,21 +146,21 @@ body {
   padding: 20px;
   background-color: #ffffff;
   border-radius: 0.2rem; }
-  #modal-field #create-todo {
+  #modal-field #create-todo, #modal-field #edit-todo {
     z-index: 10;
     display: none; }
-    #modal-field #create-todo h1 {
+    #modal-field #create-todo h1, #modal-field #edit-todo h1 {
       border-bottom: 1px solid #cbd6e2; }
-    #modal-field #create-todo .create-todo-body {
+    #modal-field #create-todo .modal-todo-body, #modal-field #edit-todo .modal-todo-body {
       margin-top: 30px; }
-      #modal-field #create-todo .create-todo-body input {
-        margin-bottom: 2rem; }
+      #modal-field #create-todo .modal-todo-body input, #modal-field #create-todo .modal-todo-body textarea, #modal-field #edit-todo .modal-todo-body input, #modal-field #edit-todo .modal-todo-body textarea {
+        margin-bottom: 1rem;
+        font-size: 1rem; }
 
 .save-button input {
   background-color: #ffffff;
   padding: 0.2rem 0.5rem;
   border-radius: 0.2rem;
-  transition: all 0.3s 0s ease;
   cursor: pointer; }
   .save-button input:hover {
     background-color: #f5fcff; }
