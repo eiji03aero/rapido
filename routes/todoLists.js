@@ -4,7 +4,8 @@ var todoLists = [
   {todo: 'todo3', description: 'これは最後'},
 ];
 var collection = require('../mongo'),
-    COL = 'users',
+    ObjectID = require('mongodb').ObjectID,
+    COL = 'todoLists',
     assert = require('assert');
 
 exports.index = function(req, res) {
@@ -13,9 +14,9 @@ exports.index = function(req, res) {
   });
 };
 
-exports.new = function(req, res) {
-  res.render('todoLists/new')
-};
+// exports.new = function(req, res) {
+//   res.render('todoLists/new')
+// };
 
 exports.create = function(req, res) {
   let todo = {
@@ -42,6 +43,12 @@ exports.update = function(req, res) {
 }
 
 exports.destroy = function(req, res) {
-  todoLists.splice(req.body.id, 1);
-  res.redirect('/');
+  collection(COL).deleteOne(
+    {_id: new ObjectID(req.body.id)},
+    function(err, result) {
+      res.redirect('/');
+    }
+  )
+  // todoLists.splice(req.body.id, 1);
+  // res.redirect('/');
 }

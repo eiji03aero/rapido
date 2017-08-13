@@ -37,7 +37,7 @@
                 <a href="/todoLists/<%= i %>/edit">edit</a>
                 <form method="post" action="/todoLists/<%= i %>?_method=DELETE">
                 <div class="save-button">
-                  <input type="hidden" name="id" value="<%= i %>">
+                  <input type="hidden" name="id" value="<%= todoLists[i]._id %>">
                   <input type="submit" value="del">
                 </div>
                 </form>
