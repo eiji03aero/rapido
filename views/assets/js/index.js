@@ -10,6 +10,7 @@ $(function() {
     $('#editForm').attr('action', action);
     $('#editTitle').attr('value', todo.todo);
     $('#editBody').val(todo.description);
+    // $('#editID').attr('value', todo._id);
   });
 
   $("#open-create-modal").click(function() {
