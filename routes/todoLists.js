@@ -11,30 +11,33 @@ exports.index = function(req, res) {
 };
 
 exports.create = function(req, res) {
-  todo = {
-    todo: req.body.todo,
-    description: req.body.description
-  };
-  collection(COL).insertOne(todo, function(err, result) {
-    assert.equal(err, null);
-    console.log('inserted a document properly');
-    res.redirect('/');
-  });
+  // todo = {
+  //   todo: req.body.todo,
+  //   description: req.body.description
+  // };
+  collection(COL).insertOne(
+    {todo: req.body.todo,description: req.body.description},
+    function(err, result) {
+      assert.equal(err, null);
+      res.redirect('/');
+    }
+  );
 };
 
 exports.update = function(req, res) {
-  collection(COL).updateOne(
+  collection(COL).findOneAndUpdate(
     {_id: new ObjectID(req.body.id)},
-    {
-      todo: req.body.todo,
-      description: req.body.description
-    },
-    {upsert: true},
+    {$set:{
+      'todo': req.body.todo,
+      'description': req.body.description
+    }},
+    // {upsert: true},
     function(err, result) {
-      res.redirect('/');
+      assert.equal(err, null);
+      res.send(result);
     }
   )
-}
+};
 
 exports.destroy = function(req, res) {
   collection(COL).deleteOne(

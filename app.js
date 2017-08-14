@@ -21,18 +21,19 @@ app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/views/assets'));
 app.use(morgan('combined'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 
 
 //routings
 app.get('/', todoLists.index);
-// app.get('/todoLists/new', todoLists.new);
 app.post('/todoLists/create', todoLists.create);
-// app.get('/todoLists/:id/edit', todoLists.edit);
 app.put('/todoLists/:id', todoLists.update);
 app.delete('/todoLists/:id', todoLists.destroy);
 
+app.get('/test', function(req, res) {
+  res.send('you made it here test');
+})
 
 //error handling
 app.use(function(err, req, res, next) {
