@@ -129,7 +129,6 @@ body {
 
 #modal-bg {
   z-index: 1;
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -139,7 +138,6 @@ body {
 
 #modal-field {
   z-index: 5;
-  display: none;
   position: fixed;
   height: 500px;
   width: 700px;
@@ -147,10 +145,14 @@ body {
   background-color: #ffffff;
   border-radius: 0.2rem; }
   #modal-field #create-todo, #modal-field #edit-todo {
-    z-index: 10;
-    display: none; }
-    #modal-field #create-todo h1, #modal-field #edit-todo h1 {
+    z-index: 10; }
+    #modal-field #create-todo .modal-todo-header, #modal-field #edit-todo .modal-todo-header {
+      display: flex;
       border-bottom: 1px solid #cbd6e2; }
+      #modal-field #create-todo .modal-todo-header .modal-todo-optionals, #modal-field #edit-todo .modal-todo-header .modal-todo-optionals {
+        margin-left: auto; }
+        #modal-field #create-todo .modal-todo-header .modal-todo-optionals p, #modal-field #edit-todo .modal-todo-header .modal-todo-optionals p {
+          margin-top: 1rem; }
     #modal-field #create-todo .modal-todo-body, #modal-field #edit-todo .modal-todo-body {
       margin-top: 30px; }
       #modal-field #create-todo .modal-todo-body input, #modal-field #create-todo .modal-todo-body textarea, #modal-field #edit-todo .modal-todo-body input, #modal-field #edit-todo .modal-todo-body textarea {
