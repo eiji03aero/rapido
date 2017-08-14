@@ -1,22 +1,24 @@
 const modalTime = 200;
 
 $(function() {
+  $('.modals').hide();
   $(".open-edit-modal").click(function() {
     modalResize();
     $("#modal-bg, #modal-field, #edit-todo").fadeIn(modalTime);
-    let todo = $(this).data('todo');
-    let action = $('#editForm').attr('action');
-    action += todo._id + '?_method=PUT';
+    $('.modal-content:not(#edit-todo)').hide();
+    let todo = $(this).data('todo'),
+        action = $('#editForm').attr('action') + todo._id + '?_method=PUT';
     $('#editForm').attr('action', action);
     $('#editTitle').attr('value', todo.todo);
     $('#editBody').val(todo.description);
-    // $('#editID').attr('value', todo._id);
+    $('#editID').attr('value', todo._id);
+    $('#createdAt').append(todo.createdAt);
   });
 
   $("#open-create-modal").click(function() {
     modalResize();
     $("#modal-bg, #modal-field, #create-todo").fadeIn(modalTime);
-    $('#edit-todo').hide();
+    $('.modal-content:not(#create-todo)').hide();
   });
 
   $("#modal-bg").click(function() {
@@ -34,5 +36,3 @@ $(function() {
     });
   };
 });
-
-// TODO もっといいモーダルの作り方を考える

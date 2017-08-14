@@ -31,20 +31,6 @@ app.post('/todoLists/create', todoLists.create);
 app.put('/todoLists/:id', todoLists.update);
 app.delete('/todoLists/:id', todoLists.destroy);
 
-// var collection = require('./mongo'),
-//     ObjectID = require('mongodb').ObjectID;
-// app.get('/test', function(req, res) {
-//   collection('todoLists').findOne(
-//     {_id: new ObjectID('5991158df77f0e37ba1b87e2')},
-//     function(err, result) {
-//       if (err) {
-//         console.log(err);
-//         throw err;
-//       };
-//       res.send(result);
-//     }
-//   );
-// });
 
 //error handling
 app.use(function(err, req, res, next) {
@@ -58,3 +44,6 @@ app.listen(3000);
 
 // TODO routerを書き直す。generator仕様
 // TODO ローディングのアニメーションをcssで作る
+// TODO タグ付けをできるようにする
+// TODO 看板を全体クリックにする
+// TODO 時刻表示が今のところ、開くたびにappendしてしまっている。

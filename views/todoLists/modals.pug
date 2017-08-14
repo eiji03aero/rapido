@@ -1,6 +1,6 @@
 #modal-bg.modals
 #modal-field.modals
-  #create-todo.modals
+  #create-todo.modals.modal-content
     h1 Create new todo
     .modal-todo-body
       form(method='post', action='/todoLists/create')
@@ -10,12 +10,15 @@
         textarea(name='description', rows='4', cols='80', placeholder='what are you supposed to do?')
         br
         .save-button
-          input(type='submit', value='保存')
-          input(type='reset', value='リセット')
+          input(type='submit', value='Save')
 
   
   #edit-todo.modals
-    h1 Edit todo
+    .modal-todo-header
+      h1 Edit todo
+      .modal-todo-optionals
+        p(id="createdAt") Created at: 
+        
     .modal-todo-body
       form(id='editForm', method='post', action='/todoLists/')
         p title:
@@ -23,7 +26,6 @@
         p description:
         textarea(id='editBody', name='description', rows='4', cols='80')
         br
-        //- input(id='editID', name='id', type='hidden')
+        input(id='editID', name='id', type='hidden')
         .save-button
-          input(type='submit', value='更新')
-          input(type='reset', value='リセット')
+          input(type='submit', value='Update')
