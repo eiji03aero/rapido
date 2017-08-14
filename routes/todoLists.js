@@ -11,14 +11,14 @@ exports.index = function(req, res) {
 };
 
 exports.create = function(req, res) {
-  // todo = {
-  //   todo: req.body.todo,
-  //   description: req.body.description
-  // };
   collection(COL).insertOne(
-    {todo: req.body.todo,description: req.body.description},
+    {
+      todo: req.body.todo,
+      description: req.body.description
+    },
     function(err, result) {
       assert.equal(err, null);
+      console.log('inserted a document properly');
       res.redirect('/');
     }
   );
@@ -27,17 +27,16 @@ exports.create = function(req, res) {
 exports.update = function(req, res) {
   collection(COL).findOneAndUpdate(
     {_id: new ObjectID(req.body.id)},
-    {$set:{
-      'todo': req.body.todo,
-      'description': req.body.description
-    }},
-    // {upsert: true},
+    {
+      todo: req.body.todo,
+      description: req.body.description
+    },
+    {upsert: false},
     function(err, result) {
-      assert.equal(err, null);
-      res.send(result);
+      res.redirect('/');
     }
   )
-};
+}
 
 exports.destroy = function(req, res) {
   collection(COL).deleteOne(

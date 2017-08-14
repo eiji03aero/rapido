@@ -31,9 +31,20 @@ app.post('/todoLists/create', todoLists.create);
 app.put('/todoLists/:id', todoLists.update);
 app.delete('/todoLists/:id', todoLists.destroy);
 
-app.get('/test', function(req, res) {
-  res.send('you made it here test');
-})
+// var collection = require('./mongo'),
+//     ObjectID = require('mongodb').ObjectID;
+// app.get('/test', function(req, res) {
+//   collection('todoLists').findOne(
+//     {_id: new ObjectID('5991158df77f0e37ba1b87e2')},
+//     function(err, result) {
+//       if (err) {
+//         console.log(err);
+//         throw err;
+//       };
+//       res.send(result);
+//     }
+//   );
+// });
 
 //error handling
 app.use(function(err, req, res, next) {
@@ -46,5 +57,4 @@ app.use(function(err, req, res, next) {
 app.listen(3000);
 
 // TODO routerを書き直す。generator仕様
-// TODO jadeの導入。とりあえずどっかで練習してから
 // TODO ローディングのアニメーションをcssで作る

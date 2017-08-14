@@ -19,9 +19,11 @@
     .modal-todo-body
       form(id='editForm', method='post', action='/todoLists/')
         p title:
-        input(id='editTitle', type='text', name='todo')
+        input(id='editTitle', name='todo', type='text')
         p description:
         textarea(id='editBody', name='description', rows='4', cols='80')
         br
-        input(type='submit', value='更新')
-        input(type='reset', value='リセット')
+        //- input(id='editID', name='id', type='hidden')
+        .save-button
+          input(type='submit', value='更新')
+          input(type='reset', value='リセット')
