@@ -1,5 +1,6 @@
 //variables
 var express = require('express'),
+  partials = require('express-partials'),
   morgan = require('morgan'),
   bodyParser = require('body-parser'),
   methodOverride = require('method-override'),
@@ -27,6 +28,12 @@ app.post('/todoLists/create', todoLists.create);
 app.put('/todoLists/:id', todoLists.update);
 app.delete('/todoLists/:id', todoLists.destroy);
 
+//app settings
+app.use(function(req, res, next) {
+  app.locals.resources = res.locals.resources || [];
+  next();
+});
+
 //error handling
 app.use(function(err, req, res, next) {
   console.log(err.stack);
@@ -40,4 +47,4 @@ app.listen(3000);
 // TODO ローディングのアニメーションをcssで作る
 // TODO タグ付けをできるようにする
 // TODO 看板を全体クリックにする
-// TODO 時刻表示が今のところ、開くたびにappendしてしまっている。
+// TODO express-partialsの導入。モーダルに使う。ajaxが必要？参考；http://hogesuke.hateblo.jp/entry/2014/04/07/010256
