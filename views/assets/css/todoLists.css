@@ -20,6 +20,9 @@ body {
     border: 1px solid #cbd6e2;
     border-radius: 0.1rem;
     cursor: text; }
+  body input[type=text]:focus, body input[type=submit]:focus, body textarea:focus {
+    outline-width: 5px;
+    outline-color: #cbd6e2; }
 
 body {
   background: #ffffff;
@@ -147,6 +150,7 @@ body {
   #modal-field #create-todo, #modal-field #edit-todo {
     z-index: 10; }
     #modal-field #create-todo .modal-todo-header, #modal-field #edit-todo .modal-todo-header {
+      padding-bottom: 0.2rem;
       display: flex;
       border-bottom: 1px solid #cbd6e2; }
       #modal-field #create-todo .modal-todo-header .modal-todo-optionals, #modal-field #edit-todo .modal-todo-header .modal-todo-optionals {

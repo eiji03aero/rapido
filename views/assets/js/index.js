@@ -12,7 +12,7 @@ $(function() {
     $('#editTitle').attr('value', todo.todo);
     $('#editBody').val(todo.description);
     $('#editID').attr('value', todo._id);
-    $('#createdAt').append(todo.createdAt);
+    $('#createdAt').html("Created at: "+todo.createdAt);
   });
 
   $("#open-create-modal").click(function() {
@@ -36,3 +36,5 @@ $(function() {
     });
   };
 });
+
+// TODO　modal内をheader, body, footerの3つに分けて、それぞれ内容のみを書き換える。ボタンを共通にしてモーダルを開く関数を一つにまとめる。コールバックに描写の関数を渡すことによって一貫性を保つようにする

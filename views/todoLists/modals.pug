@@ -1,12 +1,13 @@
 #modal-bg.modals
 #modal-field.modals
   #create-todo.modals.modal-content
-    h1 Create new todo
+    .modal-todo-header
+      h1 Create new todo
     .modal-todo-body
       form(method='post', action='/todoLists/create')
-        p title:
+        p Title:
         input(type='text', name='todo', placeholder='put title here')
-        p description:
+        p Description:
         textarea(name='description', rows='4', cols='80', placeholder='what are you supposed to do?')
         br
         .save-button
@@ -17,13 +18,13 @@
     .modal-todo-header
       h1 Edit todo
       .modal-todo-optionals
-        p(id="createdAt") Created at: 
+        p(id="createdAt")
         
     .modal-todo-body
       form(id='editForm', method='post', action='/todoLists/')
-        p title:
+        p Title:
         input(id='editTitle', name='todo', type='text')
-        p description:
+        p Description:
         textarea(id='editBody', name='description', rows='4', cols='80')
         br
         input(id='editID', name='id', type='hidden')
