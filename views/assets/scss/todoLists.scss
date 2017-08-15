@@ -37,7 +37,7 @@ body {
     justify-content: flex-end;
     padding: 2.5rem 0 1.5rem;
     margin-bottom: 2.5rem;
-    border-bottom: 1px solid $bdrColor;
+    border-bottom: 1px solid $bdrC;
     .headliner-title {
       margin-right: auto;
       p {
@@ -162,8 +162,9 @@ body {
   #create-todo, #edit-todo {
     z-index: 10;
     .modal-todo-header {
+      padding-bottom: 0.2rem;
       display: flex;
-      border-bottom: 1px solid $bdrColor;
+      border-bottom: 1px solid $bdrC;
       .modal-todo-optionals {
         margin-left: auto;
         p {
