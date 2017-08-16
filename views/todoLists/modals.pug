@@ -1,17 +1,27 @@
+- let categories = ['due today', 'have bullet', 'waited bullet', 'other bullet', 'done soldier'];
+- let cl = categories.length;
+mixin category-select(array)
+  p Category
+  select(name='category')
+    - for (let i = 0; i<5; i++) {
+      option(name=array[i])= array[i]
+    - }
+
 #modal-bg.modals
 #modal-field.modals
   #create-todo.modals.modal-content
     .modal-todo-header
       h1 Create new todo
     .modal-todo-body
-      form(method='post', action='/todoLists/create')
-        p Title:
-        input(type='text', name='todo', placeholder='put title here')
-        p Description:
-        textarea(name='description', rows='4', cols='80', placeholder='what are you supposed to do?')
-        br
-        .save-button
-          input(type='submit', value='Save')
+      .modal-todo-main
+        form(method='post', action='/todoLists/create')
+          p Title:
+          input(type='text', name='todo', placeholder='put title here')
+          p Description:
+          textarea(name='description', placeholder='what are you supposed to do?')
+          +category-select(categories)
+          .save-button
+            input(type='submit', value='Save')
 
   
   #edit-todo.modals
@@ -21,12 +31,13 @@
         p(id="createdAt")
         
     .modal-todo-body
-      form(id='editForm', method='post', action='/todoLists/')
-        p Title:
-        input(id='editTitle', name='todo', type='text')
-        p Description:
-        textarea(id='editBody', name='description', rows='4', cols='80')
-        br
-        input(id='editID', name='id', type='hidden')
-        .save-button
-          input(type='submit', value='Update')
+      .modal-todo-main
+        form(id='editForm', method='post', action='/todoLists/')
+          p Title:
+          input(id='editTitle', name='todo', type='text')
+          p Description:
+          textarea(id='editBody', name='description')
+          +category-select(categories)
+          input(id='editID', name='id', type='hidden')
+          .save-button
+            input(type='submit', value='Update')

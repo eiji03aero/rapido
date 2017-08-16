@@ -5,7 +5,6 @@ var express = require('express'),
   collection = require('../mongo'),
   ObjectID = require('mongodb').ObjectID,
   COL = 'todoLists',
-  todo,
   dt = new Date(),
   fdt = dt.toFormat('YYYY/MM/DD HH24:MI'),
   assert = require('assert');
@@ -20,6 +19,7 @@ router.post('/create', function(req, res) {
   collection(COL).insertOne({
     todo: req.body.todo,
     description: req.body.description,
+    category: req.body.category,
     createdAt: fdt
   }, function(err, result) {
     assert.equal(err, null);
@@ -34,10 +34,11 @@ router.put('/:id', function(req, res) {
   }, {
     $set: {
       todo: req.body.todo,
-      description: req.body.description
+      description: req.body.description,
+      category: req.body.category
     }
   }, {
-    upsert: false
+    upsert: true
   }, function(err, result) {
     res.redirect('/todoLists');
   })

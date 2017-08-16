@@ -49,8 +49,10 @@ app.use(function(err, req, res, next) {
 //server
 app.listen(3000);
 
-// TODO welcome pageの作成
+// TODO 一つのドキュメントに配列で保存するスタイルにする？
 // TODO ローディングのアニメーションをcssで作る
+// TODO doneにする機能を作る
+// TODO 看板をドラッグ出来るようにする
 // TODO タグ付けをできるようにする
 // TODO 看板を全体クリックにする
 // TODO express-partialsの導入。モーダルに使う。ajaxが必要？参考；http://hogesuke.hateblo.jp/entry/2014/04/07/010256
