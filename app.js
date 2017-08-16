@@ -1,6 +1,8 @@
 //variables
 var express = require('express'),
   partials = require('express-partials'),
+  favicon = require('serve-favicon'),
+  path = require('path'),
   morgan = require('morgan'),
   bodyParser = require('body-parser'),
   methodOverride = require('method-override'),
@@ -15,6 +17,9 @@ var express = require('express'),
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 
+//favicon
+app.use(favicon(path.join(__dirname, 'views/favicon.ico')));
+
 //middlewares
 app.use(express.static(__dirname + '/views/assets'));
 app.use(morgan('combined'));
@@ -23,12 +28,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
 //routings
-app.get('/', todoLists.index);
-app.post('/todoLists/create', todoLists.create);
-app.put('/todoLists/:id', todoLists.update);
-app.delete('/todoLists/:id', todoLists.destroy);
+app.get('/', function(req, res) {
+  res.render('welcome/welcome');
+});
+app.use('/todoLists', todoLists);
 
 //app settings
+//for express-partials
 app.use(function(req, res, next) {
   app.locals.resources = res.locals.resources || [];
   next();
@@ -43,8 +49,13 @@ app.use(function(err, req, res, next) {
 //server
 app.listen(3000);
 
-// TODO routerを書き直す。generator仕様
+// TODO welcome pageの作成
 // TODO ローディングのアニメーションをcssで作る
 // TODO タグ付けをできるようにする
 // TODO 看板を全体クリックにする
 // TODO express-partialsの導入。モーダルに使う。ajaxが必要？参考；http://hogesuke.hateblo.jp/entry/2014/04/07/010256
+// TODO todoLists-fieldの高さ自動調節をそのうちやる。今は70%で適当にやってる
+// TODO make some awesome animation
+// TODO modal内をheader, body, footerの3つに分けて、それぞれ内容のみを書き換える。ボタンを共通にしてモーダルを開く関数を一つにまとめる。コールバックに描写の関数を渡すことによって一貫性を保つようにする
+// TODO 編集のモーダルは右から出てくる感じに。参考：salesforce
+// TODO テストの実装
