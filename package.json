@@ -7,7 +7,7 @@
     "test": "test",
     "s": "npm run nodemon & npm run node-sass-watch",
     "nodemon": "nodemon app",
-    "node-sass-watch": "node-sass -w views/assets/scss/ -o views/assets/css"
+    "node-sass-watch": "node-sass -w views/assets/scss/ -o views/assets/css/"
   },
   "author": "",
   "license": "ISC",
@@ -23,7 +23,8 @@
     "mongodb": "^2.2.30",
     "morgan": "^1.8.2",
     "node-sass": "^4.5.3",
-    "pug": "^2.0.0-rc.3"
+    "pug": "^2.0.0-rc.3",
+    "serve-favicon": "^2.4.3"
   },
   "devDependencies": {}
 }

@@ -7,9 +7,17 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  p, h1, h3 {
+  background: $bgColor;
+  font-family: "avenir-light", sans-serif;
+  color: $fcBlack;
+  h1, h3, p, a, input, textarea {
+    font-weight: 200;
     margin: 0;
     padding: 0;
+  }
+  a {
+    color: $fcAnchor;
+    text-decoration: none;
   }
   button{
     background-color: transparent;

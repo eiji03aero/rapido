@@ -5,10 +5,17 @@ html {
 body {
   margin: 0;
   padding: 0;
-  height: 100%; }
-  body p, body h1, body h3 {
+  height: 100%;
+  background: #ffffff;
+  font-family: "avenir-light", sans-serif;
+  color: #33457b; }
+  body h1, body h3, body p, body a, body input, body textarea {
+    font-weight: 200;
     margin: 0;
     padding: 0; }
+  body a {
+    color: #0091AE;
+    text-decoration: none; }
   body button {
     background-color: transparent;
     cursor: pointer;
@@ -23,15 +30,6 @@ body {
   body input[type=text]:focus, body input[type=submit]:focus, body textarea:focus {
     outline-width: 5px;
     outline-color: #cbd6e2; }
-
-body {
-  background: #ffffff;
-  font-family: "avenir-light", sans-serif;
-  color: #33457b; }
-  body h1, body h3, body input, body textarea {
-    font-weight: 200; }
-  body a {
-    color: #0091AE; }
 
 .service-header {
   padding: 7px 20px 5px;
@@ -127,7 +125,8 @@ body {
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 2;
                 overflow: hidden; }
-              .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content button, .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content input {
+              .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content button,
+              .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content input {
                 float: right; }
 
 #modal-bg {
@@ -147,19 +146,27 @@ body {
   padding: 20px;
   background-color: #ffffff;
   border-radius: 0.2rem; }
-  #modal-field #create-todo, #modal-field #edit-todo {
+  #modal-field #create-todo,
+  #modal-field #edit-todo {
     z-index: 10; }
-    #modal-field #create-todo .modal-todo-header, #modal-field #edit-todo .modal-todo-header {
+    #modal-field #create-todo .modal-todo-header,
+    #modal-field #edit-todo .modal-todo-header {
       padding-bottom: 0.2rem;
       display: flex;
       border-bottom: 1px solid #cbd6e2; }
-      #modal-field #create-todo .modal-todo-header .modal-todo-optionals, #modal-field #edit-todo .modal-todo-header .modal-todo-optionals {
+      #modal-field #create-todo .modal-todo-header .modal-todo-optionals,
+      #modal-field #edit-todo .modal-todo-header .modal-todo-optionals {
         margin-left: auto; }
-        #modal-field #create-todo .modal-todo-header .modal-todo-optionals p, #modal-field #edit-todo .modal-todo-header .modal-todo-optionals p {
+        #modal-field #create-todo .modal-todo-header .modal-todo-optionals p,
+        #modal-field #edit-todo .modal-todo-header .modal-todo-optionals p {
           margin-top: 1rem; }
-    #modal-field #create-todo .modal-todo-body, #modal-field #edit-todo .modal-todo-body {
+    #modal-field #create-todo .modal-todo-body,
+    #modal-field #edit-todo .modal-todo-body {
       margin-top: 30px; }
-      #modal-field #create-todo .modal-todo-body input, #modal-field #create-todo .modal-todo-body textarea, #modal-field #edit-todo .modal-todo-body input, #modal-field #edit-todo .modal-todo-body textarea {
+      #modal-field #create-todo .modal-todo-body input,
+      #modal-field #create-todo .modal-todo-body textarea,
+      #modal-field #edit-todo .modal-todo-body input,
+      #modal-field #edit-todo .modal-todo-body textarea {
         margin-bottom: 1rem;
         font-size: 1rem; }
 

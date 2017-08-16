@@ -1,0 +1,55 @@
+@import "variables";
+@import "reset";
+
+.welcome-page {
+  width: 100vw;
+  height: 100vh;
+  .welcome-background {
+    width: inherit;
+    height: inherit;
+    vertical-align: bottom;
+  }
+  &:before {
+    z-index: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(0,0,0,0.5);
+  }
+  .welcome-message {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    h1, p {
+      color: $fcWhite;
+    }
+    h1 {
+      font-size: 3.5rem;
+    }
+    p {
+      font-size: 1.8rem;
+    }
+  }
+  a.welcome-button {
+    padding: 10px 30px;
+    position: absolute;
+    bottom: 80px;
+    right: 120px;
+    background-color: $trsWhite;
+    border: 1px solid rgba(50,50,50,0.8);
+    border-radius: 10px;
+    font-size: 1.8rem;
+    color: $fcWhite;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    &:hover {
+      background-color: $trsBlue;
+    }
+  }
+}
