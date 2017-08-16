@@ -9,19 +9,28 @@ body {
   background: #ffffff;
   font-family: "avenir-light", sans-serif;
   color: #33457b; }
-  body h1, body h3, body p, body a, body input, body textarea {
+  body h1, body h3, body p, body a, body input, body textarea, body select {
     font-weight: 200;
     margin: 0;
     padding: 0; }
   body a {
     color: #0091AE;
     text-decoration: none; }
+  body h1 {
+    font-size: 1.5rem; }
+  body h3, body p, body input[type=text], body textarea, body select {
+    font-size: 1rem; }
   body button {
     background-color: transparent;
     cursor: pointer;
     outline: none;
     padding: 0;
     appearance: none; }
+  body input[type=text],
+  body textarea,
+  body select {
+    margin-bottom: 1rem;
+    width: 80%; }
   body input, body textarea {
     padding: 0.2rem;
     border: 1px solid #cbd6e2;
@@ -35,8 +44,6 @@ body {
   padding: 7px 20px 5px;
   background: #2e2e2e;
   color: #eeeeee; }
-  .service-header h1 {
-    font-size: 1.5rem; }
 
 .service-body {
   padding: 0 50px;
@@ -96,8 +103,7 @@ body {
             border-bottom: 1px solid rgba(50, 50, 60, 0.1); }
             .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-header p {
               margin-left: 7px;
-              text-align: left;
-              font-size: 1rem; }
+              text-align: left; }
           .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body {
             height: 92%;
             padding: 0 10px;
@@ -114,8 +120,6 @@ body {
               box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
               margin: 20px 0;
               overflow: hidden; }
-              .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content h3 {
-                font-size: 1rem; }
               .service-body .container .todoLists-container .todoLists-field .todoLists-categories .categories-body .todoLists-content p {
                 margin-top: 5px;
                 width: 100%;
@@ -148,7 +152,8 @@ body {
   border-radius: 0.2rem; }
   #modal-field #create-todo,
   #modal-field #edit-todo {
-    z-index: 10; }
+    z-index: 10;
+    height: 80%; }
     #modal-field #create-todo .modal-todo-header,
     #modal-field #edit-todo .modal-todo-header {
       padding-bottom: 0.2rem;
@@ -162,18 +167,28 @@ body {
           margin-top: 1rem; }
     #modal-field #create-todo .modal-todo-body,
     #modal-field #edit-todo .modal-todo-body {
-      margin-top: 30px; }
-      #modal-field #create-todo .modal-todo-body input,
-      #modal-field #create-todo .modal-todo-body textarea,
-      #modal-field #edit-todo .modal-todo-body input,
-      #modal-field #edit-todo .modal-todo-body textarea {
-        margin-bottom: 1rem;
-        font-size: 1rem; }
+      display: flex;
+      height: 100%; }
+      #modal-field #create-todo .modal-todo-body .modal-todo-main,
+      #modal-field #edit-todo .modal-todo-body .modal-todo-main {
+        flex: 4;
+        padding-top: 1rem; }
+      #modal-field #create-todo .modal-todo-body .modal-todo-right,
+      #modal-field #edit-todo .modal-todo-body .modal-todo-right {
+        flex: 1;
+        height: 100%;
+        padding-top: 1rem;
+        padding-left: 0.2rem;
+        background-color: #eeeeee;
+        color: #555555;
+        font-size: 0.8rem; }
 
 .save-button input {
   background-color: #ffffff;
   padding: 0.2rem 0.5rem;
   border-radius: 0.2rem;
+  font-size: 1rem;
+  transition: all 0.3s 0s ease;
   cursor: pointer; }
   .save-button input:hover {
     background-color: #f5fcff; }
