@@ -1,5 +1,6 @@
 include ../shared/header.pug
 include ../shared/headerBar.pug
+include ../shared/functions.pug
 
 .service-body
   .todoLists-headliner
@@ -24,32 +25,31 @@ include ../shared/headerBar.pug
           .categories-header
             p due today
           .categories-body
-            - for (var i=0; i<todoLists.length; i++) {
-              .todoLists-content
-                h3 #{todoLists[i].todo}
-                p #{todoLists[i].description}
-                button(class='open-edit-modal' data-todo=todoLists[i]) Edit
-                form(method="post", action="/todoLists/"+todoLists[i]._id+"?_method=DELETE")
-                  .save-button
-                    input(type="hidden" name="id" value=todoLists[i]._id)
-                    input(type="submit" value="del")
-            - }
+            +todo-contents(due)
             
         .todoLists-categories
           .categories-header
             p have bullet
+          .categories-body
+            +todo-contents(have)
             
         .todoLists-categories
           .categories-header
             p waited bullet
+          .categories-body
+            +todo-contents(waited)
 
         .todoLists-categories
           .categories-header
             p other bullet
+          .categories-body
+            +todo-contents(other)
             
         .todoLists-categories
           .categories-header
             p done soldier
+          .categories-body
+            +todo-contents(done)
             
 script(type="text/javascript" src="js/index.js")
 

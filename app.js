@@ -53,6 +53,7 @@ app.listen(3000);
 // TODO ローディングのアニメーションをcssで作る
 // TODO doneにする機能を作る
 // TODO 看板をドラッグ出来るようにする
+// TODO jquery uiを活用する
 // TODO タグ付けをできるようにする
 // TODO 看板を全体クリックにする
 // TODO express-partialsの導入。モーダルに使う。ajaxが必要？参考；http://hogesuke.hateblo.jp/entry/2014/04/07/010256
@@ -61,3 +62,4 @@ app.listen(3000);
 // TODO modal内をheader, body, footerの3つに分けて、それぞれ内容のみを書き換える。ボタンを共通にしてモーダルを開く関数を一つにまとめる。コールバックに描写の関数を渡すことによって一貫性を保つようにする
 // TODO 編集のモーダルは右から出てくる感じに。参考：salesforce
 // TODO テストの実装
+// TODO todoLists.jsとindex.pugのレファクタリング。関数的に処理できるようにする
