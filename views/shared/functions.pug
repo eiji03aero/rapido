@@ -1,0 +1,11 @@
+mixin todo-contents(category)
+  - for (var i=0; i<category.length; i++) {
+    .todoLists-content(draggable=true)
+      h3 #{category[i].todo}
+      p #{category[i].description}
+      button(class='open-edit-modal' data-todo=category[i]) Edit
+      form(method="post", action="/todoLists/"+category[i]._id+"?_method=DELETE")
+        .save-button
+          input(type="hidden" name="id" value=category[i]._id)
+          input(type="submit" value="del")
+  - }

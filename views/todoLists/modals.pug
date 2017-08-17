@@ -3,7 +3,7 @@
 mixin category-select(array)
   p Category
   select(name='category')
-    - for (let i = 0; i<5; i++) {
+    - for (let i = 0; i<cl; i++) {
       option(name=array[i])= array[i]
     - }
 

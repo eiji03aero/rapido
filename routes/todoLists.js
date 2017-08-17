@@ -7,16 +7,49 @@ var express = require('express'),
   COL = 'todoLists',
   dt = new Date(),
   fdt = dt.toFormat('YYYY/MM/DD HH24:MI'),
+  categories = ['due today', 'have bullet', 'waited bullet', 'other bullet', 'done soldier'];
+
   assert = require('assert');
 
 router.get('/', function(req, res) {
+  let due =[],
+      have = [],
+      waited = [],
+      other = [],
+      done = [];
   collection(COL).find({}).toArray(function(err, result) {
-    res.render('todoLists/index', {todoLists: result});
+    result.forEach(function(val, idx, array) {
+      switch (val.category){
+        case categories[0]:
+          due.push(val);
+          break;
+        case categories[1]:
+          have.push(val);
+          break;
+        case categories[2]:
+          waited.push(val);
+          break;
+        case categories[3]:
+          other.push(val);
+          break;
+        case categories[4]:
+          done.push(val);
+          break;
+      }
+    });
+    res.render('todoLists/index', {
+      due: due,
+      have: have,
+      waited: waited,
+      other: other,
+      done: done
+    });
   });
 });
 
 router.post('/create', function(req, res) {
   collection(COL).insertOne({
+    dct: 'todo',
     todo: req.body.todo,
     description: req.body.description,
     category: req.body.category,
@@ -51,5 +84,8 @@ router.delete('/:id', function(req, res) {
     res.redirect('/todoLists');
   })
 });
+
+// categoryをまとめるdocument:
+// {dct: 'categoryTable', categories: ['due today', 'have bullet', 'waited bullet', 'other bullet', 'done soldier']}
 
 module.exports = router;
