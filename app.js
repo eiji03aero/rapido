@@ -49,6 +49,7 @@ app.use(function(err, req, res, next) {
 //server
 app.listen(3000);
 
+// TODO モーダルの縦を伸ばす
 // TODO 一つのドキュメントに配列で保存するスタイルにする？
 // TODO ローディングのアニメーションをcssで作る
 // TODO doneにする機能を作る
