@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "s": "npm run nodemon & npm run node-sass-watch & mongod",
+    "s": "npm run nodemon & npm run node-sass-watch",
     "nodemon": "nodemon app",
     "node-sass-watch": "node-sass -w views/assets/scss/ -o views/assets/css/"
   },
