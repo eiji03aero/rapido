@@ -18,21 +18,32 @@ include ../shared/functions.pug
   
   #edit-todo.modals
     .modal-todo-header
-      h1 Edit todo
+      h1(id="editTitle")
       .modal-todo-optionals
         p(id="createdAt")
         
     .modal-todo-body
       .modal-todo-main
-        form(id='editForm', method='post', action='/todoLists/')
-          p Title:
-          input(id='editTitle', name='title', type='text')
-          p Description:
-          textarea(id='editBody', name='description')
-          +category-select(categories)
-          input(id='editID', name='id', type='hidden')
-          .save-button
-            input(type='submit', value='Update')
+        //- form(id='editForm', method='post', action='/todoLists/')
+        //-   //- p Title:
+        //-   //- input(id='editTitle', name='title', type='text')
+        //-   p Description:
+        //-   textarea(id='editBody', name='description')
+        //-   input(id='editID', name='id', type='hidden')
+        //-   .save-button
+        //-     input(type='submit', value='Update')
+        .todo-box
+          .todo-box-left
+            .todo-box-userimg
+          .todo-box-right
+            .description-box
+              .description-header
+              .description-body
+        .add-todo-box
+          .add-todo-header
+          .add-todo-body
+          .add-todo-footer
+        
       .modal-todo-right
         .modal-integration
           p email:

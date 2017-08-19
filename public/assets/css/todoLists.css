@@ -163,7 +163,7 @@ body {
   #modal-field #create-todo,
   #modal-field #edit-todo {
     z-index: 10;
-    height: 80%; }
+    height: 100%; }
     #modal-field #create-todo .modal-todo-header,
     #modal-field #edit-todo .modal-todo-header {
       padding-bottom: 0.2rem;
@@ -178,7 +178,7 @@ body {
     #modal-field #create-todo .modal-todo-body,
     #modal-field #edit-todo .modal-todo-body {
       display: flex;
-      height: 100%;
+      height: 88%;
       margin: 1rem; }
       #modal-field #create-todo .modal-todo-body .modal-todo-main,
       #modal-field #edit-todo .modal-todo-body .modal-todo-main {
@@ -187,7 +187,8 @@ body {
       #modal-field #edit-todo .modal-todo-body .modal-todo-right {
         flex: 1;
         height: 100%;
-        padding-left: 0.2rem;
-        background-color: #eeeeee;
-        color: #555555;
-        font-size: 0.8rem; }
+        padding: 1rem 0 0 1rem;
+        border-left: 1px solid #cbd6e2; }
+        #modal-field #create-todo .modal-todo-body .modal-todo-right .modal-integration,
+        #modal-field #edit-todo .modal-todo-body .modal-todo-right .modal-integration {
+          margin-bottom: 1.5rem; }

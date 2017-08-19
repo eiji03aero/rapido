@@ -9,10 +9,11 @@ $(function() {
     let todo = $(this).data('todo'),
         action = $('#editForm').attr('action') + todo._id + '?_method=PUT';
     $('#editForm').attr('action', action);
-    $('#editTitle').attr('value', todo.title);
+    $('#editTitle').html(todo.title);
     $('#editBody').val(todo.contents[0].description);
     $('#editID').attr('value', todo._id);
-    $('#createdAt').html("Created at: "+todo.createdAt);
+    // $('#createdAt').html("Created at: "+todo.createdAt);
+    console.log(todo);
   });
 
   $("#open-create-modal").click(function() {
