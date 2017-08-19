@@ -7,50 +7,22 @@ include ../shared/functions.pug
     .headliner-title
       p todoLists
     button(id="open-create-modal", class="create-btn") Create new
-    
+
   .container
     .todoLists-sidebar
       p Concierge U
       p Home chores
       p etc
-      
+
     .todoLists-container
       .todoLists-optionals
         a(href="#") osakabe
         a(href="#") taguchi
         a(href="#") fkoji
-        
-      .todoLists-field
-        .todoLists-categories
-          .categories-header
-            p due today
-          .categories-body
-            +todo-contents(due)
-            
-        .todoLists-categories
-          .categories-header
-            p have bullet
-          .categories-body
-            +todo-contents(have)
-            
-        .todoLists-categories
-          .categories-header
-            p waited bullet
-          .categories-body
-            +todo-contents(waited)
 
-        .todoLists-categories
-          .categories-header
-            p other bullet
-          .categories-body
-            +todo-contents(other)
-            
-        .todoLists-categories
-          .categories-header
-            p done soldier
-          .categories-body
-            +todo-contents(done)
-            
+      .todoLists-field
+        +todoLists-generator(categories, todos)
+
 script(type="text/javascript" src="js/index.js")
 
 include ./modals.pug
