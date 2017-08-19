@@ -1,11 +1,4 @@
-- let categories = ['due today', 'have bullet', 'waited bullet', 'other bullet', 'done soldier'];
-- let cl = categories.length;
-mixin category-select(array)
-  p Category
-  select(name='category')
-    - for (let i = 0; i<cl; i++) {
-      option(name=array[i])= array[i]
-    - }
+include ../shared/functions.pug
 
 #modal-bg.modals
 #modal-field.modals

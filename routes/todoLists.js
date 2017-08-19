@@ -7,7 +7,6 @@ var express = require('express'),
   COL = 'todoLists',
   dt = new Date(),
   fdt = dt.toFormat('YYYY/MM/DD HH24:MI'),
-  categories = ['due today', 'have bullet', 'waited bullet', 'other bullet', 'done soldier'];
 
   assert = require('assert');
 
@@ -16,35 +15,45 @@ router.get('/', function(req, res) {
       have = [],
       waited = [],
       other = [],
-      done = [];
-  collection(COL).find({}).toArray(function(err, result) {
-    result.forEach(function(val, idx, array) {
-      switch (val.category){
-        case categories[0]:
-          due.push(val);
-          break;
-        case categories[1]:
-          have.push(val);
-          break;
-        case categories[2]:
-          waited.push(val);
-          break;
-        case categories[3]:
-          other.push(val);
-          break;
-        case categories[4]:
-          done.push(val);
-          break;
+      done = [],
+      categories = [],
+      todos = [];
+  collection(COL).findOne(
+    {dct: "categoryTable"},
+    {categories: 1},
+    function(err, result) {
+      categories = result.categories;
+      for (let i=0; i<categories.length; i++) {
+        todos.push([]);
       }
-    });
-    res.render('todoLists/index', {
-      due: due,
-      have: have,
-      waited: waited,
-      other: other,
-      done: done
-    });
-  });
+      collection(COL).find({dct: "todo"}).toArray(function(err, result) {
+        result.forEach(function(val, idx, array) {
+          switch (val.category){
+            case categories[0]:
+              todos[0].push(val);
+              break;
+            case categories[1]:
+              todos[1].push(val);
+              break;
+            case categories[2]:
+              todos[2].push(val);
+              break;
+            case categories[3]:
+              todos[3].push(val);
+              break;
+            case categories[4]:
+              todos[4].push(val);
+              break;
+          };
+        });
+        console.log(todos);
+        res.render('todoLists/index', {
+          todos: todos,
+          categories: categories
+        });
+      });
+    }
+  );
 });
 
 router.post('/create', function(req, res) {
@@ -82,7 +91,7 @@ router.delete('/:id', function(req, res) {
     _id: new ObjectID(req.body.id)
   }, function(err, result) {
     res.redirect('/todoLists');
-  })
+  });
 });
 
 // categoryをまとめるdocument:

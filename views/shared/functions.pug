@@ -9,3 +9,19 @@ mixin todo-contents(category)
           input(type="hidden" name="id" value=category[i]._id)
           input(type="submit" value="del")
   - }
+
+mixin category-select(array)
+  p Category
+  select(name='category')
+    - for (let i=0; i<array.length; i++) {
+      option(name=array[i])= array[i]
+    - }
+
+mixin todoLists-generator(categories, todos)
+  - for (let i=0; i<categories.length; i++) {
+    .todoLists-categories
+      .categories-header
+        p #{categories[i]}
+      .categories-body
+        +todo-contents(todos[i])
+  - }

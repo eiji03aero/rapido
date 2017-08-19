@@ -18,19 +18,17 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 
 //favicon
-app.use(favicon(path.join(__dirname, 'views/favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public/favicon.ico')));
 
 //middlewares
-app.use(express.static(__dirname + '/views/assets'));
+app.use(express.static(__dirname + '/public/assets'));
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
 //routings
-app.get('/', function(req, res) {
-  res.render('welcome/welcome');
-});
+app.get('/', function(req, res) {res.render('welcome/welcome')});
 app.use('/todoLists', todoLists);
 
 //app settings
@@ -49,6 +47,7 @@ app.use(function(err, req, res, next) {
 //server
 app.listen(3000);
 
+// TODO 今、todoListsのindexアクションが無理やり同期処理にコールバック地獄でしてあるので書き直す。promise?
 // TODO モーダルの縦を伸ばす
 // TODO 一つのドキュメントに配列で保存するスタイルにする？
 // TODO ローディングのアニメーションをcssで作る
