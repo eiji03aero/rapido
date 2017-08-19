@@ -1,0 +1,14 @@
+.save-button {
+  input {
+    background-color: $bgColor;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    transition: all 0.3s 0s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $bgHL;
+    }
+  }
+}

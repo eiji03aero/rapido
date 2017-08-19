@@ -11,24 +11,19 @@ var express = require('express'),
   assert = require('assert');
 
 router.get('/', function(req, res) {
-  let due =[],
-      have = [],
-      waited = [],
-      other = [],
-      done = [],
-      categories = [],
+  let categories = [],
       todos = [];
   collection(COL).findOne(
-    {dct: "categoryTable"},
+    {docType: "categoryTable"},
     {categories: 1},
     function(err, result) {
       categories = result.categories;
       for (let i=0; i<categories.length; i++) {
         todos.push([]);
       }
-      collection(COL).find({dct: "todo"}).toArray(function(err, result) {
+      collection(COL).find({docType: "todo"}).toArray(function(err, result) {
         result.forEach(function(val, idx, array) {
-          switch (val.category){
+          switch (val.categoryName){
             case categories[0]:
               todos[0].push(val);
               break;
@@ -58,14 +53,19 @@ router.get('/', function(req, res) {
 
 router.post('/create', function(req, res) {
   collection(COL).insertOne({
-    dct: 'todo',
-    todo: req.body.todo,
-    description: req.body.description,
-    category: req.body.category,
-    createdAt: fdt
+    docType: 'todo',
+    categoryName: req.body.categoryName,
+    title: req.body.title,
+    contents: [{
+      description: req.body.description,
+      status: "dummy",
+      createdAt: fdt,
+      dueTime: "dummy",
+    }],
+    email: "dummy",
+    slack: "dummy"
   }, function(err, result) {
     assert.equal(err, null);
-    console.log('inserted a document properly');
     res.redirect('/todoLists');
   });
 });

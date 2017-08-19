@@ -9,13 +9,12 @@ include ../shared/functions.pug
       .modal-todo-main
         form(method='post', action='/todoLists/create')
           p Title:
-          input(type='text', name='todo', placeholder='put title here')
+          input(type='text', name='title', placeholder='put title here')
           p Description:
           textarea(name='description', placeholder='what are you supposed to do?')
           +category-select(categories)
           .save-button
             input(type='submit', value='Save')
-
   
   #edit-todo.modals
     .modal-todo-header
@@ -27,10 +26,17 @@ include ../shared/functions.pug
       .modal-todo-main
         form(id='editForm', method='post', action='/todoLists/')
           p Title:
-          input(id='editTitle', name='todo', type='text')
+          input(id='editTitle', name='title', type='text')
           p Description:
           textarea(id='editBody', name='description')
           +category-select(categories)
           input(id='editID', name='id', type='hidden')
           .save-button
             input(type='submit', value='Update')
+      .modal-todo-right
+        .modal-integration
+          p email:
+          p eiji03aero
+        .modal-integration
+          p slack:
+          p ipquest
