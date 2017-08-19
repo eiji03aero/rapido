@@ -158,7 +158,7 @@
   #create-todo,
   #edit-todo {
     z-index: 10;
-    height: 80%;
+    height: 100%;
     .modal-todo-header {
       padding-bottom: 0.2rem;
       display: flex;
@@ -175,18 +175,47 @@
 
     .modal-todo-body {
       display: flex;
-      height: 100%;
+      height: 88%;
       margin: 1rem;
       .modal-todo-main {
         flex: 4;
+        .todo-box {
+          .todo-box-left {
+            .todo-box-userimg {
+
+            }
+          }
+          .todo-box-right {
+            .description-box {
+              .description-header {
+
+              }
+              .description-body {
+
+              }
+            }
+          }
+        }
+        .add-todo-box {
+          .add-todo-header {
+
+          }
+          .add-todo-body {
+
+          }
+          .add-todo-footer {
+
+          }
+        }
       }
       .modal-todo-right {
         flex: 1;
         height: 100%;
-        padding-left: 0.2rem;
-        background-color: $fcWhite;
-        color: $fcGray;
-        font-size: 0.8rem;
+        padding: 1rem 0 0 1rem;
+        border-left: 1px solid $bdrC;
+        .modal-integration {
+          margin-bottom: 1.5rem;
+        }
       }
     }
   }

@@ -47,7 +47,7 @@ app.use(function(err, req, res, next) {
 //server
 app.listen(3000);
 
-// TODO モーダルのデザイン変更
+// TODO モーダルのデザイン変更。cssが途中までやってあるのでそれを元に
 // TODO 今、todoListsのindexアクションが無理やり同期処理にコールバック地獄でしてあるので書き直す。promise?
 // TODO モーダルの縦を伸ばす
 // TODO 一つのドキュメントに配列で保存するスタイルにする？
