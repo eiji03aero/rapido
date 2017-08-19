@@ -1,5 +1,6 @@
 @import "variables";
 @import "reset";
+@import "buttons";
 
 .service-header {
   padding: 7px 20px 5px;
@@ -148,7 +149,7 @@
 #modal-field {
   z-index: 5;
   position: fixed;
-  height: 500px;
+  height: 600px;
   width: 700px;
   padding: 20px;
   background-color: #ffffff;
@@ -175,34 +176,18 @@
     .modal-todo-body {
       display: flex;
       height: 100%;
+      margin: 1rem;
       .modal-todo-main {
         flex: 4;
-        padding-top: 1rem;
       }
       .modal-todo-right {
         flex: 1;
         height: 100%;
-        padding-top: 1rem;
         padding-left: 0.2rem;
         background-color: $fcWhite;
         color: $fcGray;
         font-size: 0.8rem;
       }
-    }
-  }
-}
-
-.save-button {
-  input {
-    background-color: $bgColor;
-    padding: 0.2rem 0.5rem;
-    border-radius: 0.2rem;
-    font-size: 1rem;
-    transition: all 0.3s 0s ease;
-    cursor: pointer;
-
-    &:hover {
-      background-color: $bgHL;
     }
   }
 }

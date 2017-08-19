@@ -7,7 +7,7 @@
     "test": "test",
     "s": "npm run nodemon & npm run node-sass-watch",
     "nodemon": "nodemon app",
-    "node-sass-watch": "node-sass -w views/assets/scss/ -o views/assets/css/"
+    "node-sass-watch": "node-sass -w public/assets/scss/ -o public/assets/css/"
   },
   "author": "",
   "license": "ISC",

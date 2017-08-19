@@ -9,8 +9,8 @@ $(function() {
     let todo = $(this).data('todo'),
         action = $('#editForm').attr('action') + todo._id + '?_method=PUT';
     $('#editForm').attr('action', action);
-    $('#editTitle').attr('value', todo.todo);
-    $('#editBody').val(todo.description);
+    $('#editTitle').attr('value', todo.title);
+    $('#editBody').val(todo.contents[0].description);
     $('#editID').attr('value', todo._id);
     $('#createdAt').html("Created at: "+todo.createdAt);
   });

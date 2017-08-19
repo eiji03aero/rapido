@@ -1,6 +1,6 @@
 //variables
 var express = require('express'),
-  partials = require('express-partials'),
+  // partials = require('express-partials'),
   favicon = require('serve-favicon'),
   path = require('path'),
   morgan = require('morgan'),
@@ -33,10 +33,10 @@ app.use('/todoLists', todoLists);
 
 //app settings
 //for express-partials
-app.use(function(req, res, next) {
-  app.locals.resources = res.locals.resources || [];
-  next();
-});
+// app.use(function(req, res, next) {
+//   app.locals.resources = res.locals.resources || [];
+//   next();
+// });
 
 //error handling
 app.use(function(err, req, res, next) {
@@ -47,6 +47,7 @@ app.use(function(err, req, res, next) {
 //server
 app.listen(3000);
 
+// TODO モーダルのデザイン変更
 // TODO 今、todoListsのindexアクションが無理やり同期処理にコールバック地獄でしてあるので書き直す。promise?
 // TODO モーダルの縦を伸ばす
 // TODO 一つのドキュメントに配列で保存するスタイルにする？
