@@ -1,0 +1,17 @@
+.c-button {
+  display: inline-block;
+  padding: .5rem 1rem;
+  background-color: $button-color-default;
+  border: 1px solid $border-color-default;
+  border-radius: .25rem;
+  color: $font-color-black;
+  font-size: .8rem;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all 0.3s 0s ease;
+  &:hover {
+    background-color: $button-color-default-hovered;
+  }
+}

@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Integrated modules
+   ========================================================================== */
+/* ==========================================================================
+   Foundation
+   ========================================================================== */
+html body {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6, p, span, a, input, textarea, select {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none; }
+
+html body {
+  height: 100%;
+  background-color: #ffffff;
+  font-family: "avenir-light", sans-serif;
+  color: #33457b;
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, select {
+  font-weight: 200; }
+
+a {
+  color: #0091AE; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle; }
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+.l-service-header {
+  padding: .4rem 1rem .2rem;
+  background: #2e2e2e; }
+
+.l-service-body {
+  width: 100%;
+  height: 90%;
+  padding: 0 2rem;
+  box-sizing: border-box; }
+
+.l-service-headliner {
+  padding: 2rem 0 1rem;
+  margin-bottom: 2rem; }
+
+.l-service-container {
+  display: flex;
+  height: 80%;
+  text-align: center; }
+
+.l-service-sidebar {
+  flex: 1;
+  text-align: left; }
+
+.l-service-main {
+  flex: 6; }
+
+.l-service-main-header {
+  height: 40px;
+  text-align: left; }
+
+.l-service-main-body {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #f5f8fa; }
+
+/* ==========================================================================
+   Object
+   ========================================================================== */
+/* Component----------------------------------------------------------------- */
+.c-text-basic {
+  font-size: 1rem; }
+
+.c-button {
+  display: inline-block;
+  padding: .5rem 1rem;
+  background-color: #ffffff;
+  border: 1px solid #cbd6e2;
+  border-radius: .25rem;
+  color: #333333;
+  font-size: .8rem;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all 0.3s 0s ease; }
+  .c-button:hover {
+    background-color: #dadfed; }
+
+/* Project----------------------------------------------------------------- */
+/* Utitlity----------------------------------------------------------------- */

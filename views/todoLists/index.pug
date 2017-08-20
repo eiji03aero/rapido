@@ -1,26 +1,26 @@
 include ../shared/header.pug
-include ../shared/headerBar.pug
+include ../shared/service-header.pug
 include ../shared/functions.pug
 
-.service-body
-  .todoLists-headliner
+.l-service-body
+  .l-service-headliner
     .headliner-title
       p todoLists
-    button(id="open-create-modal", class="create-btn") Create new
+    button(id="open-create-modal", class="c-button") Create new
 
-  .container
-    .todoLists-sidebar
+  .l-service-container
+    .l-service-sidebar
       p Concierge U
       p Home chores
       p etc
 
-    .todoLists-container
-      .todoLists-optionals
+    .l-service-main
+      .l-service-main-header
         a(href="#") osakabe
         a(href="#") taguchi
         a(href="#") fkoji
 
-      .todoLists-field
+      .l-service-main-body
         +kanban-generator(categories, todos)
 
 script(type="text/javascript" src="js/index.js")

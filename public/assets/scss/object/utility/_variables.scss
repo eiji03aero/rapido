@@ -1,22 +1,25 @@
 //font-colors
-$fcBlack: #33457b;
-$fcGray: #555555;
-$fcWhite: #eeeeee;
-$fcAnchor: #0091AE;
+$font-color-blue: #33457b;
+$font-color-black: #333333;
+$font-color-gray: #555555;
+$font-color-white: #eeeeee;
+$font-color-anchor: #0091AE;
 
 //bg-colors
-$bgColor: #ffffff;
+$background-color: #ffffff;
 $bgHL: #f5fcff;
-$bgSHeader: #2e2e2e;
+$background-header: #2e2e2e;
 $bgTOheader: #f0f6fa;
-$bgTDField: #f5f8fa;
+$background-todo-field: #f5f8fa;
 $bgHeaderWhite: #f9fafd;
 
 //buttons
+$button-color-default: #ffffff;
 $btnMain: #ff7a59;
+$button-color-default-hovered: #dadfed;
 
 //border-colors
-$bdrC: #cbd6e2;
+$border-color-default: #cbd6e2;
 $bdrF: #9DB0C5;
 
 //transparent colors
