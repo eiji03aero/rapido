@@ -10,9 +10,9 @@ $(function() {
         action = $('#editForm').attr('action') + todo._id + '?_method=PUT';
     $('#editForm').attr('action', action);
     $('#editTitle').html(todo.title);
-    $('#editBody').val(todo.contents[0].description);
+    $('.description-body p').html(todo.contents[0].description);
     $('#editID').attr('value', todo._id);
-    // $('#createdAt').html("Created at: "+todo.createdAt);
+    $('#createdAt p').html("Created at: "+todo.contents[0].createdAt);
     console.log(todo);
   });
 
