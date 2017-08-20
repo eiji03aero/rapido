@@ -1,26 +1,32 @@
 //font-colors
-$font-color-blue: #33457b;
-$font-color-black: #333333;
-$font-color-gray: #555555;
-$font-color-white: #eeeeee;
-$font-color-anchor: #0091AE;
+$font-color--blue: #33457b;
+$font-color--black: #333333;
+$font-color--gray: #555555;
+$font-color--trueWhite: #ffffff;
+$font-color--white: #eeeeee;
+$font-color--anchor: #0091AE;
 
-//bg-colors
+//background-colors
 $background-color: #ffffff;
 $bgHL: #f5fcff;
-$background-header: #2e2e2e;
+$background-color__header: #2e2e2e;
 $bgTOheader: #f0f6fa;
-$background-todo-field: #f5f8fa;
+$background-color__todo-field: #f5f8fa;
+$background-color__kanban: #fefefe;
 $bgHeaderWhite: #f9fafd;
 
 //buttons
-$button-color-default: #ffffff;
-$btnMain: #ff7a59;
-$button-color-default-hovered: #dadfed;
+$button-color--default: #ffffff;
+$button-color--default-hovered: #ecf2fe;
+$button-color--primary: #ff7a59;
 
 //border-colors
-$border-color-default: #cbd6e2;
+$border-color--default: #cbd6e2;
+$border-color--gray: #dee1e5;
 $bdrF: #9DB0C5;
+
+//outline
+$outline-color--default: #85BFFD;
 
 //transparent colors
 $trsWhite: rgba(255,255,255,0.1);
@@ -28,4 +34,4 @@ $trsBlack: rgba(0,0,0,0.1);
 $trsBlue: rgba(0,60,120,0.3);
 
 //box-shadows
-$boxShadowGray: 1px 1px 2px rgba(110,110,110,0.5);
+$box-shadow--gray: 1px 1px 2px rgba(110,110,110,0.5);

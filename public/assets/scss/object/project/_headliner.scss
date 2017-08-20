@@ -1,0 +1,15 @@
+.p-headliner {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2.5rem 0 1.5rem;
+  &--title {
+    margin-right: auto;
+  }
+  &--operation {
+    .c-button--primary {
+      font-size: 1rem;
+      border-radius: 3px;
+      padding: 0.7rem 1.5rem;
+    }
+  }
+}

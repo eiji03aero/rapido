@@ -1,5 +1,23 @@
 .c-text{
-  &-basic {
+  &--smallX {
+    font-size: 0.65rem;
+  }
+  &--small {
+    font-size: 0.8rem;
+  }
+  &--basic {
     font-size: 1rem;
+  }
+  &--large {
+    font-size: 1.25rem;
+  }
+  &--largeX {
+    font-size: 1.5rem;
+  }
+  &--grande {
+    font-size: 2rem;
+  }
+  &--grandeX {
+    font-size: 2.5rem;
   }
 }

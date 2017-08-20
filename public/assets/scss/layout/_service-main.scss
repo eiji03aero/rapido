@@ -1,3 +1,15 @@
 .l-service-main {
   flex: 6;
 }
+
+.l-service-main__header {
+  height: 40px;
+  text-align: left;
+}
+
+.l-service-main__body {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
