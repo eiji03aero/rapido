@@ -15,11 +15,15 @@ h1, h2, h3, h4, h5, h6, p, span, a, input, textarea, select {
 a {
   text-decoration: none; }
 
+button {
+  background-color: transparent;
+  outline: none;
+  appearance: none; }
+
 html body {
   height: 100%;
   background-color: #ffffff;
   font-family: "avenir-light", sans-serif;
-  color: #33457b;
   box-sizing: border-box; }
 
 *,
@@ -28,10 +32,23 @@ html body {
   box-sizing: inherit; }
 
 h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, select {
+  color: #33457b;
   font-weight: 200; }
 
 a {
   color: #0091AE; }
+  a:hover {
+    color: #80c8d7; }
+
+input, textarea {
+  padding: .2rem;
+  border: 1px solid #cbd6e2;
+  border-radius: .2rem;
+  cursor: text; }
+
+input[type=text]:focus, input[type=submit]:focus, textarea:focus {
+  outline-width: .25rem;
+  outline-color: #85BFFD; }
 
 img {
   max-width: 100%;
@@ -52,8 +69,8 @@ img {
   box-sizing: border-box; }
 
 .l-service-headliner {
-  padding: 2rem 0 1rem;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #cbd6e2; }
 
 .l-service-container {
   display: flex;
@@ -67,25 +84,42 @@ img {
 .l-service-main {
   flex: 6; }
 
-.l-service-main-header {
+.l-service-main__header {
   height: 40px;
   text-align: left; }
 
-.l-service-main-body {
+.l-service-main__body {
   width: 100%;
   height: 100%;
   top: 0;
-  left: 0;
-  background: #f5f8fa; }
+  left: 0; }
 
 /* ==========================================================================
    Object
    ========================================================================== */
 /* Component----------------------------------------------------------------- */
-.c-text-basic {
+.c-text--smallX {
+  font-size: 0.65rem; }
+
+.c-text--small {
+  font-size: 0.8rem; }
+
+.c-text--basic {
   font-size: 1rem; }
 
-.c-button {
+.c-text--large {
+  font-size: 1.25rem; }
+
+.c-text--largeX {
+  font-size: 1.5rem; }
+
+.c-text--grande {
+  font-size: 2rem; }
+
+.c-text--grandeX {
+  font-size: 2.5rem; }
+
+.c-button, .c-button--primary, .c-button--small {
   display: inline-block;
   padding: .5rem 1rem;
   background-color: #ffffff;
@@ -98,8 +132,83 @@ img {
   vertical-align: middle;
   cursor: pointer;
   transition: all 0.3s 0s ease; }
-  .c-button:hover {
-    background-color: #dadfed; }
+  .c-button:hover, .c-button--primary:hover, .c-button--small:hover {
+    background-color: #f2f6fe; }
+
+.c-button--primary {
+  background-color: #ff7a59;
+  border: none;
+  color: #ffffff; }
+  .c-button--primary:hover {
+    background-color: #ffaf9b; }
+
+.c-button--small {
+  padding: .2rem .4rem;
+  font-size: .75rem; }
+
+.c-column-field {
+  display: flex;
+  justify-content: space-around;
+  position: relative; }
+
+.c-column-field__category {
+  flex: 1; }
+
+.c-column-field__category__body {
+  text-align: center;
+  overflow-y: auto; }
+  .c-column-field__category__body__kanban {
+    width: auto;
+    box-shadow: 1px 1px 2px rgba(110, 110, 110, 0.5);
+    border-radius: .2rem;
+    text-align: left;
+    overflow: scroll; }
 
 /* Project----------------------------------------------------------------- */
+.p-header__logo .c-text-largeX {
+  color: #eeeeee; }
+
+.p-headliner {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2.5rem 0 1.5rem; }
+  .p-headliner--title {
+    margin-right: auto; }
+  .p-headliner--operation .c-button--primary {
+    font-size: 1rem;
+    border-radius: 3px;
+    padding: 0.7rem 1.5rem; }
+
+.p-sidebar .c-text--basic {
+  margin-bottom: 1rem; }
+
+.p-main__optionals .c-text--basic {
+  margin-right: 1rem; }
+
+.p-main__todo-field {
+  background: #f5f8fa;
+  border: 1px solid #cbd6e2; }
+  .p-main__todo-field .c-column-field__category:not(:first-child) {
+    border-left: 1px solid #dee1e5; }
+  .p-main__todo-field .c-column-field__category__header {
+    padding: .5rem;
+    border-bottom: 1px solid #dee1e5;
+    text-align: left; }
+    .p-main__todo-field .c-column-field__category__header .c-text--basic {
+      padding-left: .5rem; }
+  .p-main__todo-field .c-column-field__category__body {
+    height: 100%;
+    padding: 0 .5rem; }
+    .p-main__todo-field .c-column-field__category__body__kanban {
+      min-height: 80px;
+      max-height: 120px;
+      padding: .25rem .75rem;
+      margin: .75rem 0;
+      background-color: #fefefe; }
+      .p-main__todo-field .c-column-field__category__body__kanban .c-text--small {
+        color: #555555;
+        overflow: hidden; }
+      .p-main__todo-field .c-column-field__category__body__kanban .c-button--small {
+        float: right; }
+
 /* Utitlity----------------------------------------------------------------- */

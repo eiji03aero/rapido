@@ -4,24 +4,31 @@ include ../shared/functions.pug
 
 .l-service-body
   .l-service-headliner
-    .headliner-title
-      p todoLists
-    button(id="open-create-modal", class="c-button") Create new
+    .p-headliner
+      .p-headliner--title
+        span(class="c-text--largeX") todoLists
+      .p-headliner--operation
+        button(id="open-create-modal", class="c-button--primary") Create new
 
   .l-service-container
     .l-service-sidebar
-      p Concierge U
-      p Home chores
-      p etc
+      .p-sidebar
+        p(class="c-text--basic") Concierge U
+        p(class="c-text--basic") Home chores
+        p(class="c-text--basic") etc
 
     .l-service-main
-      .l-service-main-header
-        a(href="#") osakabe
-        a(href="#") taguchi
-        a(href="#") fkoji
+      .l-service-main__header
+        .p-main__optionals
+          a(href="#" class="c-text--basic") osakabe
+          a(href="#" class="c-text--basic") taguchi
+          a(href="#" class="c-text--basic") fkoji
 
-      .l-service-main-body
-        +kanban-generator(categories, todos)
+      .l-service-main__body
+        .p-main
+          .p-main__todo-field
+            .c-column-field
+              +kanban-generator(categories, todos)
 
 script(type="text/javascript" src="js/index.js")
 

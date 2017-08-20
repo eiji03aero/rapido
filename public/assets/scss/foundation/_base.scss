@@ -1,15 +1,14 @@
-$prefix-for-webkit: true;
-$prefix-for-mozilla: true;
-$prefix-for-microsoft: true;
-$prefix-for-opera: true;
-$prefix-for-spec: true;
+// $prefix-for-webkit: true;
+// $prefix-for-mozilla: true;
+// $prefix-for-microsoft: true;
+// $prefix-for-opera: true;
+// $prefix-for-spec: true;
 
 html {
   body {
     height: 100%;
     background-color: $background-color;
     font-family: "avenir-light", sans-serif;
-    color: $font-color-blue;
     box-sizing: border-box;
   }
 }
@@ -21,19 +20,29 @@ html {
 }
 
 h1,h2,h3,h4,h5,h6,p,span,a,button,input,textarea,select {
+  color: $font-color--blue;
   font-weight: 200;
 }
 
-// h1 {
-//   font-size: 1.5rem;
-// }
-//
-// h3,p,span {
-//   font-size: 1rem;
-// }
-
 a {
-  color: $font-color-anchor;
+  color: $font-color--anchor;
+  &:hover {
+    color: tint($font-color--anchor, 50%);
+  }
+}
+
+input, textarea {
+  padding: .2rem;
+  border: 1px solid $border-color--default;
+  border-radius: .2rem;
+  cursor: text;
+}
+
+input[type=text], input[type=submit], textarea{
+  &:focus {
+    outline-width: .25rem;
+    outline-color: $outline-color--default;
+  }
 }
 
 img {

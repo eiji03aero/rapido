@@ -1,6 +1,7 @@
 const modalTime = 200;
 
 $(function() {
+  var timer = null;
   $('.modals').hide();
   $(".open-edit-modal").click(function() {
     modalResize();
@@ -36,4 +37,11 @@ $(function() {
       "left": ((w-mw)/2) + "px",
     });
   };
+  $(".js-prevent-window-scroll").on("mousewheel", function () {
+    $("body").css({overflow: "hidden"});
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      $("body").css({overflow: "inherit"});
+    }, 200);
+  });
 });

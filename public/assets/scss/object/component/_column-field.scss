@@ -1,0 +1,24 @@
+.c-column-field {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.c-column-field__category{
+  flex: 1;
+}
+
+.c-column-field__category__header {
+}
+
+.c-column-field__category__body {
+  text-align: center;
+  overflow-y: auto;
+  &__kanban {
+    width: auto;
+    box-shadow: $box-shadow--gray;
+    border-radius: .2rem;
+    text-align: left;
+    overflow: scroll;
+  }
+}
