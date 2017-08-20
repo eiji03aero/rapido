@@ -175,30 +175,69 @@
 
     .modal-todo-body {
       display: flex;
-      height: 88%;
+      height: 530px;
       margin: 1rem;
+      box-sizing: content-box;
       .modal-todo-main {
-        flex: 4;
-        .todo-box {
+        position: relative;
+        width: 520px;
+        height: 100%;
+        padding-top: 1rem;
+        padding-right: 1rem;
+        .todos-field {
+          overflow-y: auto;
+          .todo-box {
+          display: flex;
           .todo-box-left {
+            width: 50px;
             .todo-box-userimg {
-
+              width: 30px;
+              height: 30px;
             }
           }
           .todo-box-right {
+            flex: 1;
+            padding: 0 3px 3px 0;
             .description-box {
+              // background-color: #999;
+              box-shadow: $boxShadowGray;
+              border-radius: 5px;
               .description-header {
-
+                display: flex;
+                padding: 0 0.5rem;
+                background-color: $bgHeaderWhite;
+                color: $fcGray;
+                p {
+                  font-size: 0.8rem;
+                }
+                .description-times {
+                  flex: 1;
+                }
+                .description-operation {
+                  margin-right: auto;
+                }
               }
               .description-body {
-
+                min-height: 50px;
+                padding: 0 0.5rem;
+                p {
+                  font-size: 1rem;
+                }
               }
             }
           }
         }
+        }
         .add-todo-box {
+          width: 97%;
+          height: 100px;
+          margin: 0 auto;
+          background-color: #eee;
+          position: absolute;
+          bottom: 0;
           .add-todo-header {
-
+            height: 30px;
+            background-color: $bgHeaderWhite;
           }
           .add-todo-body {
 
@@ -211,7 +250,8 @@
       .modal-todo-right {
         flex: 1;
         height: 100%;
-        padding: 1rem 0 0 1rem;
+        padding-top: 1rem;
+        padding-left: 1rem;
         border-left: 1px solid $bdrC;
         .modal-integration {
           margin-bottom: 1.5rem;

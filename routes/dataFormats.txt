@@ -1,0 +1,24 @@
+todoLists collection data formats
+
+documents:
+
+categoryTable:
+{
+  docType: 'categoryTable',
+  categories: ['due today', 'have bullet']
+}
+
+todo:
+{
+  docType: 'todo',
+  categoryName: req.body.categoryName,
+  title: req.body.title,
+  contents: [{
+    description: req.body.description,
+    status: "dummy",
+    createdAt: fdt,
+    dueTime: "dummy",
+  }],
+  email: "dummy",
+  slack: "dummy"
+}

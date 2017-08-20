@@ -23,25 +23,12 @@ router.get('/', function(req, res) {
       }
       collection(COL).find({docType: "todo"}).toArray(function(err, result) {
         result.forEach(function(val, idx, array) {
-          switch (val.categoryName){
-            case categories[0]:
-              todos[0].push(val);
-              break;
-            case categories[1]:
-              todos[1].push(val);
-              break;
-            case categories[2]:
-              todos[2].push(val);
-              break;
-            case categories[3]:
-              todos[3].push(val);
-              break;
-            case categories[4]:
-              todos[4].push(val);
-              break;
+          for (let i=0; i<categories.length; i++) {
+            if (categories[i]==val.categoryName) {
+              todos[i].push(val);
+            }
           };
         });
-        console.log(todos);
         res.render('todoLists/index', {
           todos: todos,
           categories: categories
@@ -70,6 +57,7 @@ router.post('/create', function(req, res) {
   });
 });
 
+// TODO ↓作り直す。setの内容が変わっているはず
 router.put('/:id', function(req, res) {
   collection(COL).findOneAndUpdate({
     _id: new ObjectID(req.body.id)
@@ -93,8 +81,5 @@ router.delete('/:id', function(req, res) {
     res.redirect('/todoLists');
   });
 });
-
-// categoryをまとめるdocument:
-// {dct: 'categoryTable', categories: ['due today', 'have bullet', 'waited bullet', 'other bullet', 'done soldier']}
 
 module.exports = router;
