@@ -12,11 +12,11 @@ mixin todo-kanban(todos)
     .todoLists-content(draggable=true)
       h3 #{todos[i].title}
       p #{todos[i].contents[0].description}
-      button(class='open-edit-modal' data-todo=todos[i]) Edit
+      button(class='open-edit-modal c-button' data-todo=todos[i]) Edit
       form(method="post", action="/todoLists/"+todos[i]._id+"?_method=DELETE")
         .save-button
           input(type="hidden" name="id" value=todos[i]._id)
-          input(type="submit" value="del")
+          input(type="submit" class="c-button" value="del")
   - }
 
 mixin category-select(array)

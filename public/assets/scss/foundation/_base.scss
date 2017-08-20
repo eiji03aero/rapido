@@ -1,0 +1,43 @@
+$prefix-for-webkit: true;
+$prefix-for-mozilla: true;
+$prefix-for-microsoft: true;
+$prefix-for-opera: true;
+$prefix-for-spec: true;
+
+html {
+  body {
+    height: 100%;
+    background-color: $background-color;
+    font-family: "avenir-light", sans-serif;
+    color: $font-color-blue;
+    box-sizing: border-box;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1,h2,h3,h4,h5,h6,p,span,a,button,input,textarea,select {
+  font-weight: 200;
+}
+
+// h1 {
+//   font-size: 1.5rem;
+// }
+//
+// h3,p,span {
+//   font-size: 1rem;
+// }
+
+a {
+  color: $font-color-anchor;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}

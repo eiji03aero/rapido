@@ -2,17 +2,18 @@
   "name": "todop",
   "version": "1.0.0",
   "description": "try to make the best app ever",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "test",
     "s": "npm run nodemon & npm run node-sass-watch",
     "nodemon": "nodemon app",
-    "node-sass-watch": "node-sass -w public/assets/scss/ -o public/assets/css/"
+    "node-sass-watch": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets/ -w public/assets/scss/ -o public/assets/css/"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "bourbon": "^4.3.4",
     "date-utils": "^1.2.21",
     "ejs": "^2.5.7",
     "express": "^4.15.3",
