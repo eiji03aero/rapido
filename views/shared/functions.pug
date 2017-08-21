@@ -1,3 +1,8 @@
+mixin sidebar-link-generator(array)
+  - for (let i of array) {
+    a(href="#" class="c-anchor c-anchor--blue") #{i}
+  - }
+
 mixin kanban-generator(categories, todos)
   - for (let i=0; i<categories.length; i++) {
     .c-column-field__category
@@ -12,10 +17,10 @@ mixin todo-kanban(todos)
     .c-column-field__category__body__kanban.js-prevent-window-scroll
       span(class="c-text--basic") #{todos[i].title}
       p(class="c-text--small") #{todos[i].contents[0].description}
-      button(class='js-modal--edit__open c-button--small' data-todo=todos[i]) Edit
+      button(class='js-modal--edit__open c-button c-button-size--small' data-todo=todos[i]) Edit
       form(method="post", action="/todoLists/"+todos[i]._id+"?_method=DELETE")
         input(type="hidden" name="id" value=todos[i]._id)
-        input(type="submit" class="c-button--small" value="Del")
+        input(type="submit" class="c-button c-button-size--small" value="Del")
   - }
 
 mixin category-select(array)

@@ -13,16 +13,14 @@ include ../shared/functions.pug
   .l-service-container
     .l-service-sidebar
       .p-sidebar
-        p(class="c-text--basic") Concierge U
-        p(class="c-text--basic") Home chores
-        p(class="c-text--basic") etc
+        +sidebar-link-generator(["Concierge U","Home chores","etc"])
 
     .l-service-main
       .l-service-main__header
         .p-main__optionals
-          a(href="#" class="c-text--basic") osakabe
-          a(href="#" class="c-text--basic") taguchi
-          a(href="#" class="c-text--basic") fkoji
+          a(href="#" class="c-anchor") osakabe
+          a(href="#" class="c-anchor") taguchi
+          a(href="#" class="c-anchor") fkoji
 
       .l-service-main__body
         .p-main

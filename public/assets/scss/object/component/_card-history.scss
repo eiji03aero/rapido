@@ -1,21 +1,32 @@
 .c-card-history {
+  height: auto;
   overflow-y: auto;
   &__card-box {
     display: flex;
-    &--left {
+    margin-bottom: 1.5rem;
+    &__left {
+      width: 3rem;
       &__user-img {
-
+        width: 2.5rem;
+        height: 2.5rem;
       }
     }
-    &--main {
+    &__main {
+      flex: 1;
       &__description-box {
+        margin: .25rem;
         box-shadow: $box-shadow--gray;
         border-radius: .25rem;
         &__header {
-
+          display: flex;
+          &__time {
+            flex:1;
+          }
+          &__operation {
+            margin-left: auto;
+          }
         }
         &__body {
-
         }
       }
     }

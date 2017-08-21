@@ -47,6 +47,9 @@ app.use(function(err, req, res, next) {
 //server
 app.listen(3000);
 
+// TODO add-todoのタブ内の右のほうにdoneの奴を表示するボタンの機能の実装
+// TODO cssのリファクタリング。height/widthやpaddingなど、一括で管理するようにする
+// TODO ポチッと押したら、mongodbの中身を表示するterminal的モーダルを作る。ajaxで
 // TODO bourbonを使ってみる
 // TODO モーダルのデザイン変更。cssが途中までやってあるのでそれを元に
 // TODO 今、todoListsのindexアクションが無理やり同期処理にコールバック地獄でしてあるので書き直す。promise?

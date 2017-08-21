@@ -5,7 +5,7 @@
     .js-modal--create.js-modal--content
       .js-modal__field__header
         .js-modal__field__header__title
-          span(class="c-text-basic") Create new todo
+          span(class="c-text--large") Create new todo
       .js-modal__field__body
         .js-modal__field__body__create-form
           form(method='post' action='/todoLists/create')
@@ -14,59 +14,44 @@
             p Description:
             textarea(name='description' placeholder='what are you supposed to do?')
             +category-select(categories)
-            input(type='submit' class="c-button--small" value='Save')
-              
+            input(type='submit' class="c-button c-button-size--small" value='Save')
+
     .js-modal--edit.js-modal--content
-  
-      //- #edit-todo.modals
-      //-   .modal-todo-header
-      //-     h1(id="editTitle")
-      
-      
-      //- .modal-todo-optionals　いらん
-      //-   p(id="createdAt")
-        
-        
-    //- .modal-todo-body
-    //-   .modal-todo-main
-        
-        
-        //- form(id='editForm', method='post', action='/todoLists/')　いらん
-        //-   //- p Title:
-        //-   //- input(id='editTitle', name='title', type='text')
-        //-   p Description:
-        //-   textarea(id='editBody', name='description')
-        //-   input(id='editID', name='id', type='hidden')
-        //-   .save-button
-        //-     input(type='submit', value='Update')
-        
-        
-      //-   .todos-field  
-      //-     .todo-box
-      //-       .todo-box-left
-      //-         img(class="todo-box-userimg", src="images/user_profile.png")
-      //-       .todo-box-right
-      //-         .description-box
-      //-           .description-header
-      //-             #createdAt.description-times
-      //-               p
-      //-               
-      //-             .description-operation
-      //-               p done  edit
-      //-               
-      //-           .description-body
-      //-               p
-      //-   .add-todo-box
-      //-     .add-todo-header
-      //-     .add-todo-body
-      //-     .add-todo-footer
-      //-       .save-button
-      //-         input(type='submit' class="c-button" value='Update')
-      //-   
-      //- .modal-todo-right
-      //-   .modal-integration
-      //-     p email:
-      //-     p eiji03aero
-      //-   .modal-integration
-      //-     p slack:
-      //-     p ipquest
+      .js-modal__field__header
+        .js-modal__field__header__title
+          span(class="editTitle c-text--large")
+      .js-modal__field__body
+        .js-modal__field__body__main
+          .c-card-history.js-prevent-window-scroll
+            - for (let i=0; i<8; i++) {
+              form(class='editForm', method='post', action='/todoLists/')
+                .c-card-history__card-box
+                  .c-card-history__card-box__left
+                    img(src="images/user_profile.png" class="c-card-history__card-box__left__user-img")
+                  .c-card-history__card-box__main
+                    .c-card-history__card-box__main__description-box
+                      .c-card-history__card-box__main__description-box__header
+                        span(class="editCreatedAt c-card-history__card-box__main__description-box__header__time c-text--small")
+                        span(class="c-card-history__card-box__main__description-box__header__operation c-text--small") done edit
+                      .c-card-history__card-box__main__description-box__body
+                        span(class="editDescription c-text--small")
+            - }
+          .c-add-todo-box
+            .c-add-todo-box__header
+              .c-tab
+                .c-trapezoid
+                  span(class="c-text--basic") osa
+                .c-trapezoid
+                  span(class="c-text--basic") ei
+            .c-add-todo-box__body
+              textarea(class="c-textarea")
+            .c-add-todo-box__footer
+              button(class="c-button--primary c-button-size--small u-margin--right--05") Add
+              button(class="c-button c-button-size--small u-margin--right--05") Cancel
+        .js-modal__field__body__sidebar
+          .js-modal__field__body__sidebar__integration
+            p(class="c-text--small") Email
+            p(class="editEmail c-text--small") eiji03aero
+          .js-modal__field__body__sidebar__integration
+            p(class="c-text--small") Slack
+            p(class="editSlack c-text--small") ipquest

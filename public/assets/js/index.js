@@ -12,15 +12,15 @@ $(function() {
 
   $(".js-modal--edit__open").click(function() {
     modalResize();
-    $(".js-modal__background, #modal-field, #edit-todo").fadeIn(modalTime);
-    $('.modal-content:not(#edit-todo)').hide();
+    $(".js-modal__background, .js-modal__field, .js-modal--edit").fadeIn(modalTime);
+    $('.js-modal--content:not(.js-modal--edit)').hide();
     let todo = $(this).data('todo'),
         action = $('#editForm').attr('action') + todo._id + '?_method=PUT';
-    $('#editForm').attr('action', action);
-    $('#editTitle').html(todo.title);
-    $('.description-body p').html(todo.contents[0].description);
+    $('.editForm').attr('action', action);
+    $('.editTitle').html(todo.title);
+    $('.editCreatedAt').html("Created at: "+todo.contents[0].createdAt);
+    $('.editDescription').html(todo.contents[0].description);
     $('#editID').attr('value', todo._id);
-    $('#createdAt p').html("Created at: "+todo.contents[0].createdAt);
   });
 
   $(".js-modal__background").click(function() {

@@ -26,8 +26,12 @@
   }
 }
 
-.c-button--small {
-  @extend .c-button;
+.c-button-size--smallX {
+  padding: .05rem .25rem;
+  font-size: .5rem;
+}
+
+.c-button-size--small {
   padding: .2rem .4rem;
   font-size: .75rem;
 }

@@ -1,0 +1,21 @@
+.c-input {
+}
+
+.c-textarea {
+  width: 97%;
+}
+
+
+.c-anchor {
+  color: $font-color--anchor;
+  &:hover {
+    color: tint($font-color--anchor, 50%);
+  }
+}
+
+.c-anchor--blue {
+  color: $font-color--blue;
+  &:hover {
+    color: tint($font-color--blue, 40%);
+  }
+}

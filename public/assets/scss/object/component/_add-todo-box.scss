@@ -1,0 +1,34 @@
+.c-add-todo-box {
+  flex-direction: column;
+  height: 120px;
+  width: 95%;
+  border: 1px solid $border-color--default;
+  border-radius: .25rem;
+  background-color: $background-color;
+  &__header {
+    height: 1.5rem;
+    padding-top: .1rem;
+    background-color: $background-color__card__header;
+    border-radius: .25rem .25rem 0 0;
+    .c-tab {
+      .c-trapezoid {
+        .c-text--basic {
+        }
+      }
+    }
+  }
+  &__body {
+    margin-top: 0.25rem;
+    text-align: center;
+    vertical-align: middle;
+    .c-textarea {
+      height: 3.5rem;
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    height: auto;
+    padding-bottom: 0.25rem;
+  }
+}

@@ -1,262 +1,40 @@
-@import "variables";
+/* ==========================================================================
+   Integrated modules
+   ========================================================================== */
+@import "bourbon";
+/* ==========================================================================
+   Foundation
+   ========================================================================== */
+@import "object/utility/variables";
 @import "foundation/reset";
-@import "buttons";
-
-.service-header {
-  // padding: 7px 20px 5px;
-  // background: $bgSHeader;
-  // color: $fcWhite;
-}
-
-.service-body {
-  // padding: 0 50px;
-  // height: 90%;
-  // box-sizing: border-box;
-
-  .todoLists-headliner {
-    // display: flex;
-    // justify-content: flex-end;
-    // padding: 2.5rem 0 1.5rem;
-    // margin-bottom: 2.5rem;
-    // border-bottom: 1px solid $bdrC;
-
-    .headliner-title {
-      // margin-right: auto;
-
-      p {
-        // font-size: 1.6rem;
-        // color: $fcBlack;
-      }
-    }
-
-    .create-btn {
-      // background-color: $btnMain;
-      // color: #ffffff;
-      // font-size: 1rem;
-      // border-radius: 3px;
-      // padding: 0.7rem 1.5rem;
-      // border: none;
-    }
-  }
-
-  .container {
-    // text-align: center;
-    // display: -webkit-flex;
-    // display: flex;
-    // height: 78%;
-
-    .todoLists-sidebar {
-      // flex: 1;
-      // text-align: left;
-
-      p {
-        // padding: 0.5rem 0;
-      }
-    }
-
-    .todoLists-container {
-      // flex: 9;
-
-      .todoLists-optionals {
-        // height: 40px;
-        // text-align: left;
-
-        :not(:first-child) {
-          // margin-left: 10px;
-        }
-      }
-
-      .todoLists-field {
-        // background: $bgTDField;
-        // position: relative;
-        // display: flex;
-        // justify-content: space-around;
-        // top: 0;
-        // left: 0;
-        // height: 100%;
-        // width: 100%;
-        // border: 1px solid rgba(50,50,60,0.1);
-
-        div.todoLists-categories:not(:first-child) {
-          // border-left: 1px solid rgba(50,50,60,0.1);
-        }
-
-        .todoLists-categories {
-          // flex: 1;
-
-          .categories-header {
-            // padding: 10px 0;
-            // background-color: $bgTOField;
-            // border-bottom: 1px solid rgba(50,50,60,0.1);
-
-            p {
-              // margin-left: 7px;
-              // text-align: left;
-            }
-          }
-
-          .categories-body {
-            // height: 92%;
-            // padding: 0 10px;
-            // overflow-y: auto;
-            // text-align: center;
-
-            .todoLists-content {
-              // width: auto;
-              // min-height: 80px;
-              // max-height: 120px;
-              // text-align: left;
-              // padding: 3px 10px;
-              // background-color: #fefefe;
-              // border-radius: 3px;
-              // box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-              // margin: 20px 0;
-              // overflow: hidden;
-
-              p {
-                // margin-top: 5px;
-                // width: 100%;
-                // color: $fcGray;
-                // font-size: 0.8rem;
-                // display: -webkit-box;
-                // -webkit-box-orient: vertical;
-                // -webkit-line-clamp: 2;
-                // overflow: hidden;
-              }
-
-              button,
-              input {
-                // float: right;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-#modal-bg {
-  // z-index: 1;
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // height: 100%;
-  // width: 100%;
-  // background-color: rgba(0,0,0,0.40);
-}
-
-#modal-field {
-  // z-index: 5;
-  // position: fixed;
-  // height: 600px;
-  // width: 700px;
-  // padding: 20px;
-  // background-color: #ffffff;
-  // border-radius: 0.2rem;
-
-  #create-todo,
-  #edit-todo {
-    // z-index: 10;
-    // height: 100%;
-    .modal-todo-header {
-      // padding-bottom: 0.2rem;
-      // display: flex;
-      // border-bottom: 1px solid $bdrC;
-
-      .modal-todo-optionals {
-        // margin-left: auto;
-
-        p {
-          // margin-top: 1rem;
-        }
-      }
-    }
-
-    .modal-todo-body {
-      // display: flex;
-      // height: 530px;
-      // margin: 1rem;
-      box-sizing: content-box;
-      .modal-todo-main {
-        // position: relative;
-        // width: 520px;
-        // height: 100%;
-        // padding-top: 1rem;
-        // padding-right: 1rem;
-        .todos-field {
-          // overflow-y: auto;
-          .todo-box {
-          // display: flex;
-          .todo-box-left {
-            // width: 50px;
-            .todo-box-userimg {
-              // width: 30px;
-              // height: 30px;
-            }
-          }
-          .todo-box-right {
-            // flex: 1;
-            // padding: 0 3px 3px 0;
-            .description-box {
-              // background-color: #999;
-              // box-shadow: $boxShadowGray;
-              // border-radius: 5px;
-              .description-header {
-                display: flex;
-                padding: 0 0.5rem;
-                background-color: $bgHeaderWhite;
-                color: $fcGray;
-                p {
-                  font-size: 0.8rem;
-                }
-                .description-times {
-                  flex: 1;
-                }
-                .description-operation {
-                  margin-right: auto;
-                }
-              }
-              .description-body {
-                min-height: 50px;
-                padding: 0 0.5rem;
-                p {
-                  font-size: 1rem;
-                }
-              }
-            }
-          }
-        }
-        }
-        .add-todo-box {
-          width: 97%;
-          height: 100px;
-          margin: 0 auto;
-          background-color: #eee;
-          position: absolute;
-          bottom: 0;
-          .add-todo-header {
-            height: 30px;
-            background-color: $bgHeaderWhite;
-          }
-          .add-todo-body {
-
-          }
-          .add-todo-footer {
-
-          }
-        }
-      }
-      .modal-todo-right {
-        flex: 1;
-        height: 100%;
-        padding-top: 1rem;
-        padding-left: 1rem;
-        border-left: 1px solid $bdrC;
-        .modal-integration {
-          margin-bottom: 1.5rem;
-        }
-      }
-    }
-  }
-}
+@import "foundation/base";
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+@import "layout/service-header";
+@import "layout/service-body";
+@import "layout/service-headliner";
+@import "layout/service-container";
+@import "layout/service-sidebar";
+@import "layout/service-main";
+/* ==========================================================================
+   Object
+   ========================================================================== */
+/* Component----------------------------------------------------------------- */
+@import "object/component/text";
+@import "object/component/button";
+@import "object/component/input-anchor";
+@import "object/component/column-field";
+@import "object/component/card-history";
+@import "object/component/add-todo-box";
+@import "object/component/tab";
+@import "object/component/shapes";
+/* Project----------------------------------------------------------------- */
+@import "object/project/header";
+@import "object/project/headliner";
+@import "object/project/sidebar";
+@import "object/project/main";
+@import "object/project/todoLists-modal";
+/* Utitlity----------------------------------------------------------------- */
+@import "object/utility/js-modal";
+@import "object/utility/u-margin";
