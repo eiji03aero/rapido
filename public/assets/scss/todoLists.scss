@@ -137,71 +137,71 @@
 }
 
 #modal-bg {
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0,0,0,0.40);
+  // z-index: 1;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // height: 100%;
+  // width: 100%;
+  // background-color: rgba(0,0,0,0.40);
 }
 
 #modal-field {
-  z-index: 5;
-  position: fixed;
-  height: 600px;
-  width: 700px;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 0.2rem;
+  // z-index: 5;
+  // position: fixed;
+  // height: 600px;
+  // width: 700px;
+  // padding: 20px;
+  // background-color: #ffffff;
+  // border-radius: 0.2rem;
 
   #create-todo,
   #edit-todo {
-    z-index: 10;
-    height: 100%;
+    // z-index: 10;
+    // height: 100%;
     .modal-todo-header {
-      padding-bottom: 0.2rem;
-      display: flex;
-      border-bottom: 1px solid $bdrC;
+      // padding-bottom: 0.2rem;
+      // display: flex;
+      // border-bottom: 1px solid $bdrC;
 
       .modal-todo-optionals {
-        margin-left: auto;
+        // margin-left: auto;
 
         p {
-          margin-top: 1rem;
+          // margin-top: 1rem;
         }
       }
     }
 
     .modal-todo-body {
-      display: flex;
-      height: 530px;
-      margin: 1rem;
+      // display: flex;
+      // height: 530px;
+      // margin: 1rem;
       box-sizing: content-box;
       .modal-todo-main {
-        position: relative;
-        width: 520px;
-        height: 100%;
-        padding-top: 1rem;
-        padding-right: 1rem;
+        // position: relative;
+        // width: 520px;
+        // height: 100%;
+        // padding-top: 1rem;
+        // padding-right: 1rem;
         .todos-field {
-          overflow-y: auto;
+          // overflow-y: auto;
           .todo-box {
-          display: flex;
+          // display: flex;
           .todo-box-left {
-            width: 50px;
+            // width: 50px;
             .todo-box-userimg {
-              width: 30px;
-              height: 30px;
+              // width: 30px;
+              // height: 30px;
             }
           }
           .todo-box-right {
-            flex: 1;
-            padding: 0 3px 3px 0;
+            // flex: 1;
+            // padding: 0 3px 3px 0;
             .description-box {
               // background-color: #999;
-              box-shadow: $boxShadowGray;
-              border-radius: 5px;
+              // box-shadow: $boxShadowGray;
+              // border-radius: 5px;
               .description-header {
                 display: flex;
                 padding: 0 0.5rem;

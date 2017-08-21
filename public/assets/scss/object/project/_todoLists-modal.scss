@@ -1,0 +1,53 @@
+.p-todoLists-modal {
+  .js-modal__field {
+    height: 600px;
+    width: 700px;
+    padding: 1.25rem;
+    background-color: $background-color;
+    border-radius: .2rem;
+    &__header {
+      padding-bottom: .2rem;
+      border-bottom: 1px solid $border-color--default;
+      &__title {
+
+      }
+      &__optionals {
+        .c-text-basic {
+          margin-top: 1rem;
+        }
+      }
+    }
+    &__body {
+      display: flex;
+      height: 530px;
+      margin: 1rem;
+      &__create-form {
+
+      }
+      &__main {
+        position: relative;
+        width: 520px;
+        height: 100%;
+        padding: 1rem; //要検証　ダメならtopとrightに1rem
+        .c-card-history {
+          &__card-box {
+            &--left {
+              width: 3rem;
+              &__user-img {
+                width: 2.5rem;
+                height: 2.5rem;
+              }
+            }
+            &--main {
+              flex: 1;
+              // padding: 0 3px 3px 0; box-shadowが出なかったらつける
+            }
+          }
+        }
+      }
+      &__sidebar {
+
+      }
+    }
+  }
+}

@@ -12,7 +12,7 @@ mixin todo-kanban(todos)
     .c-column-field__category__body__kanban.js-prevent-window-scroll
       span(class="c-text--basic") #{todos[i].title}
       p(class="c-text--small") #{todos[i].contents[0].description}
-      button(class='open-edit-modal c-button--small' data-todo=todos[i]) Edit
+      button(class='js-modal--edit__open c-button--small' data-todo=todos[i]) Edit
       form(method="post", action="/todoLists/"+todos[i]._id+"?_method=DELETE")
         input(type="hidden" name="id" value=todos[i]._id)
         input(type="submit" class="c-button--small" value="Del")

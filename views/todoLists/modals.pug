@@ -1,28 +1,37 @@
-#modal-bg.modals
-#modal-field.modals
-  #create-todo.modals.modal-content
-    .modal-todo-header
-      h1 Create new todo
-    .modal-todo-body
-      .modal-todo-main
-        form(method='post' action='/todoLists/create')
-          p Title:
-          input(type='text' name='title' placeholder='put title here')
-          p Description:
-          textarea(name='description' placeholder='what are you supposed to do?')
-          +category-select(categories)
-          .save-button
-            input(type='submit' value='Save')
+.js-modal__background.js-modal
+
+.p-todoLists-modal
+  .js-modal__field.js-modal
+    .js-modal--create.js-modal--content
+      .js-modal__field__header
+        .js-modal__field__header__title
+          span(class="c-text-basic") Create new todo
+      .js-modal__field__body
+        .js-modal__field__body__create-form
+          form(method='post' action='/todoLists/create')
+            p Title:
+            input(type='text' name='title' placeholder='put title here')
+            p Description:
+            textarea(name='description' placeholder='what are you supposed to do?')
+            +category-select(categories)
+            input(type='submit' class="c-button--small" value='Save')
+              
+    .js-modal--edit.js-modal--content
   
-  #edit-todo.modals
-    .modal-todo-header
-      h1(id="editTitle")
-      //- .modal-todo-optionals
+      //- #edit-todo.modals
+      //-   .modal-todo-header
+      //-     h1(id="editTitle")
+      
+      
+      //- .modal-todo-optionals　いらん
       //-   p(id="createdAt")
         
-    .modal-todo-body
-      .modal-todo-main
-        //- form(id='editForm', method='post', action='/todoLists/')
+        
+    //- .modal-todo-body
+    //-   .modal-todo-main
+        
+        
+        //- form(id='editForm', method='post', action='/todoLists/')　いらん
         //-   //- p Title:
         //-   //- input(id='editTitle', name='title', type='text')
         //-   p Description:
@@ -30,32 +39,34 @@
         //-   input(id='editID', name='id', type='hidden')
         //-   .save-button
         //-     input(type='submit', value='Update')
-        .todos-field  
-          .todo-box
-            .todo-box-left
-              img(class="todo-box-userimg", src="images/user_profile.png")
-            .todo-box-right
-              .description-box
-                .description-header
-                  #createdAt.description-times
-                    p
-                    
-                  .description-operation
-                    p done  edit
-                    
-                .description-body
-                    p
-        .add-todo-box
-          .add-todo-header
-          .add-todo-body
-          .add-todo-footer
-            .save-button
-              input(type='submit' class="c-button" value='Update')
         
-      .modal-todo-right
-        .modal-integration
-          p email:
-          p eiji03aero
-        .modal-integration
-          p slack:
-          p ipquest
+        
+      //-   .todos-field  
+      //-     .todo-box
+      //-       .todo-box-left
+      //-         img(class="todo-box-userimg", src="images/user_profile.png")
+      //-       .todo-box-right
+      //-         .description-box
+      //-           .description-header
+      //-             #createdAt.description-times
+      //-               p
+      //-               
+      //-             .description-operation
+      //-               p done  edit
+      //-               
+      //-           .description-body
+      //-               p
+      //-   .add-todo-box
+      //-     .add-todo-header
+      //-     .add-todo-body
+      //-     .add-todo-footer
+      //-       .save-button
+      //-         input(type='submit' class="c-button" value='Update')
+      //-   
+      //- .modal-todo-right
+      //-   .modal-integration
+      //-     p email:
+      //-     p eiji03aero
+      //-   .modal-integration
+      //-     p slack:
+      //-     p ipquest
