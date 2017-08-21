@@ -1,5 +1,6 @@
-@import "variables";
-@import "reset";
+@import "object/utility/variables";
+@import "foundation/reset";
+@import "foundation/base";
 
 .welcome-page {
   width: 100vw;
@@ -25,7 +26,7 @@
     top: 50px;
     left: 40px;
     h1, p {
-      color: $fcWhite;
+      color: $font-color--white;
     }
     h1 {
       font-size: 3.5rem;
@@ -39,17 +40,17 @@
     position: absolute;
     bottom: 80px;
     right: 120px;
-    background-color: $trsWhite;
+    background-color: $transparent-white--10;
     border: 1px solid rgba(50,50,50,0.8);
     border-radius: 10px;
     font-size: 1.8rem;
-    color: $fcWhite;
+    color: $font-color--white;
     cursor: pointer;
     transition-property: background-color;
     transition-duration: 0.2s;
     transition-timing-function: ease;
     &:hover {
-      background-color: $trsBlue;
+      background-color: $transparent-blue--30;
     }
   }
 }

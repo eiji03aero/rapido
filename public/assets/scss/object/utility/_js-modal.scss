@@ -1,46 +1,52 @@
 .js-modal {
-
-}
-
-.js-modal__background {
-  z-index: 1;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  background-color: $transparent-black--40;
-}
-.js-modal--create {
-
-}
-.js-modal--edit {
-
-}
-.js-modal--content {
-
-}
-.js-modal__field {
-  z-index: 5;
-  height: 100%;
-  position: fixed;
-  &__header {
-    display: flex;
-    &__title {
-    }
-    &__optionals {
-      margin-left: auto;
-    }
+  &__background {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: $transparent-black--20;
   }
-  &__body {
-    &__create-form {
 
+  &--create {}
+
+  &--edit {}
+
+  &--content {}
+
+  &__field {
+    height: 700px;
+    width: 670px;
+    z-index: 5;
+    position: fixed;
+
+    &__header {
+      display: flex;
+
+      &__title {}
+
+      &__optionals {
+        margin-left: auto;
+      }
     }
-    &__main {
 
-    }
-    &__sidebar {
+    &__body {
+      display: flex;
+      height: 640px;
 
+      &__main {
+        width: 480px;
+        height: 100%;
+        position: relative;
+      }
+
+      &__sidebar {
+        flex: 1;
+        height: 96%;
+
+        &__integration {}
+      }
     }
   }
 }
