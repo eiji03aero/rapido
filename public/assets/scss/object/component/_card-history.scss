@@ -1,0 +1,23 @@
+.c-card-history {
+  overflow-y: auto;
+  &__card-box {
+    display: flex;
+    &--left {
+      &__user-img {
+
+      }
+    }
+    &--main {
+      &__description-box {
+        box-shadow: $box-shadow--gray;
+        border-radius: .25rem;
+        &__header {
+
+        }
+        &__body {
+
+        }
+      }
+    }
+  }
+}
