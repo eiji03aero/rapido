@@ -6,14 +6,14 @@ $(function() {
 
   $(".js-modal--create__open").click(function() {
     modalResize();
-    $(".js-modal__background, .js-modal__field, .js-modal--create").fadeIn(modalTime);
-    $('.js-modal--content:not(.js-modal--create)').hide();
+    $(".js-modal__background, .js-modal__field, .js-modal-create").fadeIn(modalTime);
+    $('.js-modal-content:not(.js-modal-create)').hide();
   });
 
   $(".js-modal--edit__open").click(function() {
     modalResize();
-    $(".js-modal__background, .js-modal__field, .js-modal--edit").fadeIn(modalTime);
-    $('.js-modal--content:not(.js-modal--edit)').hide();
+    $(".js-modal__background, .js-modal__field, .js-modal-edit").fadeIn(modalTime);
+    $('.js-modal-content:not(.js-modal-edit)').hide();
     let todo = $(this).data('todo'),
         action = $('#editForm').attr('action') + todo._id + '?_method=PUT';
     $('.editForm').attr('action', action);
