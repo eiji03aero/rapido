@@ -29,6 +29,7 @@
 @import "object/component/add-todo-box";
 @import "object/component/tab";
 @import "object/component/shapes";
+@import "object/component/kanban";
 /* Project----------------------------------------------------------------- */
 @import "object/project/header";
 @import "object/project/headliner";
@@ -38,3 +39,4 @@
 /* Utitlity----------------------------------------------------------------- */
 @import "object/utility/js-modal";
 @import "object/utility/u-margin";
+@import "object/utility/u-clearfix";

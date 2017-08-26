@@ -6,6 +6,7 @@
     height: 100%;
     width: 100%;
     position: fixed;
+    display: none;
     background-color: $transparent-black--20;
   }
 
@@ -20,6 +21,7 @@
     width: 670px;
     z-index: 5;
     position: fixed;
+    display: none;
 
     &__header {
       display: flex;

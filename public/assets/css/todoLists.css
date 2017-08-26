@@ -172,12 +172,6 @@ img {
 .c-column-field__category__body {
   text-align: center;
   overflow-y: auto; }
-  .c-column-field__category__body__kanban {
-    width: auto;
-    box-shadow: 1px 1px 2px rgba(110, 110, 110, 0.5);
-    border-radius: .2rem;
-    text-align: left;
-    overflow: scroll; }
 
 .c-card-history {
   height: auto;
@@ -238,6 +232,17 @@ img {
   border-radius: .5rem .5rem 0 0;
   height: 0; }
 
+.c-kanban {
+  height: auto;
+  max-height: 120px;
+  min-height: 75px;
+  padding: .25rem .75rem;
+  margin: .75rem 0;
+  background-color: #fefefe;
+  box-shadow: 1px 1px 2px rgba(110, 110, 110, 0.5);
+  border-radius: .2rem;
+  text-align: left; }
+
 /* Project----------------------------------------------------------------- */
 .p-header__logo .c-text--largeX {
   color: #eeeeee; }
@@ -274,20 +279,14 @@ img {
   .p-main__todo-field .c-column-field__category__body {
     height: 100%;
     padding: 0 .5rem; }
-    .p-main__todo-field .c-column-field__category__body__kanban {
-      min-height: 80px;
-      max-height: 120px;
-      padding: .25rem .75rem;
-      margin: .75rem 0;
-      background-color: #fefefe; }
-      .p-main__todo-field .c-column-field__category__body__kanban .c-text--small {
-        color: #555555;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden; }
-      .p-main__todo-field .c-column-field__category__body__kanban .c-button, .p-main__todo-field .c-column-field__category__body__kanban .c-button--primary {
-        float: right; }
+    .p-main__todo-field .c-column-field__category__body .c-kanban .c-text--small {
+      color: #555555;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden; }
+    .p-main__todo-field .c-column-field__category__body .c-kanban .c-button, .p-main__todo-field .c-column-field__category__body .c-kanban .c-button--primary {
+      float: right; }
 
 .p-todoLists-modal .js-modal__field {
   padding: 1.25rem;
@@ -328,13 +327,15 @@ img {
   height: 100%;
   width: 100%;
   position: fixed;
+  display: none;
   background-color: rgba(0, 0, 0, 0.2); }
 
 .js-modal__field {
   height: 700px;
   width: 670px;
   z-index: 5;
-  position: fixed; }
+  position: fixed;
+  display: none; }
   .js-modal__field__header {
     display: flex; }
     .js-modal__field__header__optionals {
@@ -358,3 +359,8 @@ img {
 
 .u-margin--right--2 {
   margin-right: 2rem; }
+
+.u-clearfix:after {
+  content: "";
+  clear: both;
+  display: block; }
