@@ -1,8 +1,18 @@
 const modalTime = 200;
+var timer = null;
 
 $(function() {
-  var timer = null;
-  $('.js-modal').hide();
+
+  $('.c-column-field__category__body').sortable({
+    connectWith: '.c-column-field__category__body',
+    opacity: 0.8,
+    stop: function(event, ui) {
+      console.log($(ui.item).attr('data-todo'));
+      console.log($(this).parent().attr('id'))
+      // TODO 移動した先のカテゴリを取得する
+      TODO 変更した内容をajaxでDBに保存する
+    }
+  });
 
   $(".js-modal--create__open").click(function() {
     modalResize();

@@ -51,7 +51,6 @@ app.listen(3000);
 // TODO cssのリファクタリング。height/widthやpaddingなど、一括で管理するようにする
 // TODO ポチッと押したら、mongodbの中身を表示するterminal的モーダルを作る。ajaxで
 // TODO bourbonを使ってみる
-// TODO モーダルのデザイン変更。cssが途中までやってあるのでそれを元に
 // TODO 今、todoListsのindexアクションが無理やり同期処理にコールバック地獄でしてあるので書き直す。promise?
 // TODO ローディングのアニメーションをcssで作る
 // TODO doneにする機能を作る
@@ -60,6 +59,5 @@ app.listen(3000);
 // TODO 看板を全体クリックにする
 // TODO todoLists-fieldの高さ自動調節をそのうちやる。今は70%で適当にやってる
 // TODO modal内をheader, body, footerの3つに分けて、それぞれ内容のみを書き換える。ボタンを共通にしてモーダルを開く関数を一つにまとめる。コールバックに描写の関数を渡すことによって一貫性を保つようにする
-// TODO 編集のモーダルは右から出てくる感じに。参考：salesforce
 // TODO テストの実装
 // TODO todoLists.jsとindex.pugのレファクタリング。関数的に処理できるようにする

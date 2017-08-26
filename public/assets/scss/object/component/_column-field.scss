@@ -14,11 +14,4 @@
 .c-column-field__category__body {
   text-align: center;
   overflow-y: auto;
-  &__kanban {
-    width: auto;
-    box-shadow: $box-shadow--gray;
-    border-radius: .2rem;
-    text-align: left;
-    overflow: scroll;
-  }
 }

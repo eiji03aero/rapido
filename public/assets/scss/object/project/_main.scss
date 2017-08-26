@@ -25,12 +25,7 @@
     &__body {
       height: 100%;
       padding: 0 .5rem;
-      &__kanban {
-        min-height: 80px;
-        max-height: 120px;
-        padding: .25rem .75rem;
-        margin: .75rem 0;
-        background-color: $background-color__kanban;
+      .c-kanban {
         .c-text--basic {
         }
         .c-text--small {
