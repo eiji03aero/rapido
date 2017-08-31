@@ -8,7 +8,7 @@ mixin kanban-generator(categories, todos)
     .c-column-field__category
       .c-column-field__category__header
         span(class="c-text--basic") #{categories[i]}
-      .c-column-field__category__body(id="osakabe")
+      .c-column-field__category__body
         +todo-kanban(todos[i])
   - }
 
