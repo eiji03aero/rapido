@@ -23,6 +23,7 @@
       .js-modal__field__body
         .js-modal__field__body__main
           .c-card-history.js-prevent-window-scroll
+            //- ↓ここは適当に8回レンダーしてテストしてる
             - for (let i=0; i<8; i++) {
               form(class='editForm', method='post', action='/todoLists/')
                 .c-card-history__card-box
