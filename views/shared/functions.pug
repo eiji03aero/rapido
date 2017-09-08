@@ -8,13 +8,13 @@ mixin kanban-generator(categories, todos)
     .c-column-field__category
       .c-column-field__category__header
         span(class="c-text--basic") #{categories[i]}
-      .c-column-field__category__body
+      .c-column-field__category__body(data-category=categories[i])
         +todo-kanban(todos[i])
   - }
 
 mixin todo-kanban(todos)
   - for (var i=0; i<todos.length; i++) {
-    .c-kanban(data-todo=todos[i]).js-prevent-window-scroll.u-clearfix
+    .c-kanban(data-todo=todos[i]).u-clearfix
       span(class="c-text--basic") #{todos[i].title}
       p(class="c-text--small") #{todos[i].contents[0].description}
       button(class='js-modal--edit__open c-button c-button-size--small' data-todo=todos[i]) Edit

@@ -1,5 +1,13 @@
 .c-tab {
   display: flex;
-  .c-trapezoid {
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 0 1rem;
+  border-bottom: .1rem solid $border-color--gray;
+  &__elem {
+    max-width: 3rem;
+    margin-right: .5rem;
+    position: relative;
   }
 }
