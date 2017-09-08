@@ -47,6 +47,7 @@ app.use(function(err, req, res, next) {
 //server
 app.listen(3000);
 
+// TODO タブのデザイン変更
 // TODO add-todoのタブ内の右のほうにdoneの奴を表示するボタンの機能の実装
 // TODO cssのリファクタリング。height/widthやpaddingなど、一括で管理するようにする
 // TODO ポチッと押したら、mongodbの中身を表示するterminal的モーダルを作る。ajaxで
@@ -54,10 +55,8 @@ app.listen(3000);
 // TODO 今、todoListsのindexアクションが無理やり同期処理にコールバック地獄でしてあるので書き直す。promise?
 // TODO ローディングのアニメーションをcssで作る
 // TODO doneにする機能を作る
-// TODO 看板をドラッグ出来るようにする
 // TODO jquery uiを活用する
 // TODO 看板を全体クリックにする
 // TODO todoLists-fieldの高さ自動調節をそのうちやる。今は70%で適当にやってる
-// TODO modal内をheader, body, footerの3つに分けて、それぞれ内容のみを書き換える。ボタンを共通にしてモーダルを開く関数を一つにまとめる。コールバックに描写の関数を渡すことによって一貫性を保つようにする
 // TODO テストの実装
-// TODO todoLists.jsとindex.pugのレファクタリング。関数的に処理できるようにする
+// TODO todoLists.jsリファクタリング。関数的に処理できるようにする

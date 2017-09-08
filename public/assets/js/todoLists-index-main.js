@@ -23,6 +23,7 @@ let
 setJqueryMap = function () {
   jqueryMap = {
     categoryBody: $('.c-column-field__category__body'),
+
     modalCreateOpen: $('.js-modal--create__open'),
     modalEditOpen: $('.js-modal--edit__open'),
     modalBackground: $('.js-modal__background'),
@@ -50,8 +51,8 @@ categorySortable = function() {
     connectWith: jqueryMap.categoryBody,
     opacity: configMap.cardMoveOpacity,
     stop: function(event, ui) {
-      // console.log($(ui.item).attr('data-todo'));
-      // console.log($(this).parent().attr('id'));
+      console.log(ui.item.attr('data-todo'));
+      console.log(event.currentTarget);
       // TODO 移動した先のカテゴリを取得する
       // TODO 変更した内容をajaxでDBに保存する
     }
