@@ -1,26 +1,32 @@
-//--------------- BEGIN MODULE SCOPE VARIABLES ---------------
 
-let
-  configMap = {
-    modalFadeTime: 200,
-    cardMoveOpacity: 0.8
-  },
-  jqueryMap = {},
+// --------------- BEGIN MODULE SCOPE VARIABLES ---------------
 
-  timer,
-  setJqueryMap, categorySortable, modalResize,
-  modalCreateOpen, modalEditOpen, modalHideAndSeek, closeModals,
-  initModule;
+const configMap = {
+  modalFadeTime: 200,
+  cardMoveOpacity: 0.8,
+};
 
-//---------------- END MODULE SCOPE VARIABLES ----------------
+let jqueryMap;
+let setJqueryMap;
+let categorySortable;
+let modalResize;
+let modalCreateOpen;
+let modalEditOpen;
+let modalHideAndSeek;
+let closeModals;
+let initModule;
+
+// let timer;
+
+// ---------------- END MODULE SCOPE VARIABLES ----------------
 
 
-//-------------------- BEGIN DOM METHODS ---------------------
+// -------------------- BEGIN DOM METHODS ---------------------
 // Begin DOM method /name/
 // End DOM method /name/
 
 // Begin DOM method /setJqueryMap/
-setJqueryMap = function () {
+setJqueryMap = () => {
   jqueryMap = {
     categoryBody: $('.c-column-field__category__body'),
 
@@ -38,7 +44,7 @@ setJqueryMap = function () {
     modalEditCreatedAt: $('.editCreatedAt'),
     modalEditDescription: $('.editDescription'),
     modalEditID: $('#editID'),
-    modals: $('.js-modal')
+    modals: $('.js-modal'),
   };
 };
 // End DOM method /setJqueryMap/
@@ -46,16 +52,16 @@ setJqueryMap = function () {
 // Begin DOM method /categorySortable/
 // Purpose: make category__body interactive with jQuery's sortable
 //
-categorySortable = function() {
+categorySortable = () => {
   jqueryMap.categoryBody.sortable({
     connectWith: jqueryMap.categoryBody,
     opacity: configMap.cardMoveOpacity,
-    stop: function(event, ui) {
+    stop: (event, ui) => {
       console.log(ui.item.attr('data-todo'));
       console.log(event.currentTarget);
       // TODO 移動した先のカテゴリを取得する
       // TODO 変更した内容をajaxでDBに保存する
-    }
+    },
   });
 };
 // End DOM method /categorySortable/
@@ -63,16 +69,15 @@ categorySortable = function() {
 // Begin DOM method /modalResize/
 // Purpose: Resize the modal size every time opened
 //
-modalResize = function() {
-  let
-    h = $(window).height(),
-    w = $(window).width(),
-    mh = jqueryMap.modalField.outerHeight(),
-    mw = jqueryMap.modalField.outerWidth();
+modalResize = () => {
+  let h = $(window).height();
+  let w = $(window).width();
+  let mh = jqueryMap.modalField.outerHeight();
+  let mw = jqueryMap.modalField.outerWidth();
 
   jqueryMap.modalField.css({
-    "top": ((h-mh)/2) + "px",
-    "left": ((w-mw)/2) + "px"
+    top: `${((h - mh) / 2)}px`,
+    left: `${((w - mw) / 2)}px`,
   });
 };
 // End DOM method /modalResize/
@@ -80,7 +85,7 @@ modalResize = function() {
 // Begin DOM method /modalHideAndSeek/
 // Purpose: Hide unrelated modal content
 //
-modalHideAndSeek = function(targetContent) {
+modalHideAndSeek = (targetContent) => {
   $(`.js-modal-content:not(${targetContent})`).hide();
 };
 // End DOM method /modalHideAndSeek/
@@ -89,7 +94,7 @@ modalHideAndSeek = function(targetContent) {
 // Begin DOM method /modalCreateOpen/
 // Purpose: open edit modal
 //
-modalCreateOpen = function() {
+modalCreateOpen = () => {
   modalResize();
   jqueryMap.modalBackground.fadeIn(configMap.modalFadeTime);
   jqueryMap.modalField.fadeIn(configMap.modalFadeTime);
@@ -99,20 +104,19 @@ modalCreateOpen = function() {
 // End DOM method /modalCreateOpen/
 
 // Begin DOM method /modalEditOpen/
-modalEditOpen = function() {
-  let
-    todo = $(this).data('todo'),
-    action = jqueryMap.modalEditForm.attr('action') + todo._id + '?_method=PUT';
+modalEditOpen = () => {
+  let todo = $(this).data('todo');
+  let action = `${jqueryMap.modalEditForm.attr('action')}${todo._id}?_method=PUT`;
 
   modalResize();
   jqueryMap.modalBackground.fadeIn(configMap.modalFadeTime);
   jqueryMap.modalField.fadeIn(configMap.modalFadeTime);
   jqueryMap.modalEdit.fadeIn(configMap.modalFadeTime);
-  jqueryMap.modalContent
+  // jqueryMap.modalContent
   modalHideAndSeek(jqueryMap.modalEditClass);
   jqueryMap.modalEditForm.attr('action', action);
   jqueryMap.modalEditTitle.html(todo.title);
-  jqueryMap.modalEditCreatedAt.html('Create at: '+todo.contents[0].createdAt);
+  jqueryMap.modalEditCreatedAt.html(`Create at: ${todo.contents[0].createdAt}`);
   jqueryMap.modalEditDescription.html(todo.contents[0].description);
   jqueryMap.modalEditID.attr('value', todo._id);
 };
@@ -121,19 +125,19 @@ modalEditOpen = function() {
 // Begin DOM method /closeModals/
 // Purpose: close modal-related objects
 //
-closeModals = function(){
+closeModals = () => {
   jqueryMap.modals.fadeOut(configMap.modalFadeTime);
 };
 // End DOM method /closeModals/
 
-//--------------------- END DOM METHODS ----------------------
+// --------------------- END DOM METHODS ----------------------
 
 
-//------------------- BEGIN PUBLIC METHODS -------------------
+// ------------------- BEGIN PUBLIC METHODS -------------------
 // Begin Public method /name/
 // End Public method /name/
 
-initModule = function() {
+initModule = () => {
   setJqueryMap();
   categorySortable();
   jqueryMap.modalCreateOpen.click(modalCreateOpen);
@@ -141,8 +145,8 @@ initModule = function() {
   jqueryMap.modalBackground.click(closeModals);
 };
 
-//-------------------- END PUBLIC METHODS --------------------
+// -------------------- END PUBLIC METHODS --------------------
 
 
-//-------------------- INIT THIS MODULE ----------------------
+// -------------------- INIT THIS MODULE ----------------------
 initModule();
