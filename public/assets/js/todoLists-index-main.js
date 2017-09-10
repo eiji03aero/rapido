@@ -5,18 +5,7 @@ const configMap = {
   modalFadeTime: 200,
   cardMoveOpacity: 0.8,
 };
-
-let jqueryMap;
-let setJqueryMap;
-let categorySortable;
-let modalResize;
-let modalCreateOpen;
-let modalEditOpen;
-let modalHideAndSeek;
-let closeModals;
-let initModule;
-
-// let timer;
+let jqueryMap = {};
 
 // ---------------- END MODULE SCOPE VARIABLES ----------------
 
@@ -26,7 +15,7 @@ let initModule;
 // End DOM method /name/
 
 // Begin DOM method /setJqueryMap/
-setJqueryMap = () => {
+const setJqueryMap = () => {
   jqueryMap = {
     categoryBody: $('.c-column-field__category__body'),
 
@@ -52,7 +41,7 @@ setJqueryMap = () => {
 // Begin DOM method /categorySortable/
 // Purpose: make category__body interactive with jQuery's sortable
 //
-categorySortable = () => {
+const categorySortable = () => {
   jqueryMap.categoryBody.sortable({
     connectWith: jqueryMap.categoryBody,
     opacity: configMap.cardMoveOpacity,
@@ -69,11 +58,11 @@ categorySortable = () => {
 // Begin DOM method /modalResize/
 // Purpose: Resize the modal size every time opened
 //
-modalResize = () => {
-  let h = $(window).height();
-  let w = $(window).width();
-  let mh = jqueryMap.modalField.outerHeight();
-  let mw = jqueryMap.modalField.outerWidth();
+const modalResize = () => {
+  const h = $(window).height();
+  const w = $(window).width();
+  const mh = jqueryMap.modalField.outerHeight();
+  const mw = jqueryMap.modalField.outerWidth();
 
   jqueryMap.modalField.css({
     top: `${((h - mh) / 2)}px`,
@@ -85,7 +74,7 @@ modalResize = () => {
 // Begin DOM method /modalHideAndSeek/
 // Purpose: Hide unrelated modal content
 //
-modalHideAndSeek = (targetContent) => {
+const modalHideAndSeek = (targetContent) => {
   $(`.js-modal-content:not(${targetContent})`).hide();
 };
 // End DOM method /modalHideAndSeek/
@@ -94,7 +83,7 @@ modalHideAndSeek = (targetContent) => {
 // Begin DOM method /modalCreateOpen/
 // Purpose: open edit modal
 //
-modalCreateOpen = () => {
+const modalCreateOpen = () => {
   modalResize();
   jqueryMap.modalBackground.fadeIn(configMap.modalFadeTime);
   jqueryMap.modalField.fadeIn(configMap.modalFadeTime);
@@ -104,9 +93,9 @@ modalCreateOpen = () => {
 // End DOM method /modalCreateOpen/
 
 // Begin DOM method /modalEditOpen/
-modalEditOpen = () => {
-  let todo = $(this).data('todo');
-  let action = `${jqueryMap.modalEditForm.attr('action')}${todo._id}?_method=PUT`;
+const modalEditOpen = () => {
+  const todo = $(this).data('todo');
+  const action = `${jqueryMap.modalEditForm.attr('action')}${todo._id}?_method=PUT`;
 
   modalResize();
   jqueryMap.modalBackground.fadeIn(configMap.modalFadeTime);
@@ -125,7 +114,7 @@ modalEditOpen = () => {
 // Begin DOM method /closeModals/
 // Purpose: close modal-related objects
 //
-closeModals = () => {
+const closeModals = () => {
   jqueryMap.modals.fadeOut(configMap.modalFadeTime);
 };
 // End DOM method /closeModals/
@@ -137,7 +126,7 @@ closeModals = () => {
 // Begin Public method /name/
 // End Public method /name/
 
-initModule = () => {
+const initModule = () => {
   setJqueryMap();
   categorySortable();
   jqueryMap.modalCreateOpen.click(modalCreateOpen);

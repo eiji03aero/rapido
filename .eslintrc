@@ -3,5 +3,8 @@
   "env": {
     "browser": true,
     "jquery": true,
-    },
+  },
+  "rules": {
+    "no-underscore-dangle": 0,
+  },
 }
