@@ -1,4 +1,3 @@
-
 require('date-utils');
 
 const express = require('express');
@@ -25,7 +24,7 @@ router.get('/', (req, res) => {
         todos.push([]);
       }
       collection(COL).find({ docType: 'todo' }).toArray((err2, result2) => {
-        result.forEach((val, idx, array) => {
+        result2.forEach((val, idx, array) => {
           for (let i = 0; i < categories.length; i += 1) {
             if (categories[i] === val.categoryName) {
               todos[i].push(val);

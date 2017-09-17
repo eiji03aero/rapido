@@ -1,4 +1,3 @@
-
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
@@ -12,6 +11,6 @@ MongoClient.connect(url, (err, mongodb) => {
   db = mongodb;
 });
 
-const collection = (name) => { db.collection(name); };
+const collection = (name) => { return db.collection(name); };
 
 module.exports = collection;
